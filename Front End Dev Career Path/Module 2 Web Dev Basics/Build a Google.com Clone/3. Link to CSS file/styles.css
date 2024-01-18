@@ -1,0 +1,28 @@
+/*
+Challenge:
+Select the img tag and set the width 
+of the Google logo to be 300px.
+*/
+/*
+Challenge: 
+Turn the elements into blocks!
+*/
+/* Challenge: 
+    Add some space (margin) above our image!
+    Do you remember how we added spacing in the 
+    cookie widget example?
+*/
+div {
+    margin-top: 100px;
+}
+
+img {
+    display: block;
+    width: 300px;
+}
+
+input {
+    display: block;
+    width: 400px;
+}
+

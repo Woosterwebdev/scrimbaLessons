@@ -1,0 +1,50 @@
+.main {
+    margin-top: 100px;    
+}
+
+.logo-img {
+    display: block;
+    width: 300px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-input {
+    display: block;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 24px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+}
+
+/*
+Challenge:
+Center the button and add some space above it
+*/
+.btn {
+    display: block;
+    margin: 30px auto;
+
+    /*
+    Challenge:
+    Style the button according to the provided design.
+    Hint: Use padding, font-size, border-radius, border, and background
+    
+    PS: 
+    The real background is #f8f9fa but it is failing our contrast check. 
+    So here's the background color we will use: #dfe1e5
+    */
+    
+    background-color: #dfe1e5;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 14px;
+}

@@ -1,0 +1,8 @@
+@font-face {
+    src: url("SFDistantGalaxy.ttf");
+    font-family: SFDistantGalaxy;
+}
+
+h1 {
+    font-family: SFDistantGalaxy;
+}

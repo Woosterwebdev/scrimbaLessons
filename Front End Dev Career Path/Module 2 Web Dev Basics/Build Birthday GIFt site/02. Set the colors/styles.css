@@ -1,0 +1,21 @@
+/*
+Challenge:
+Add colors to the site based on the provided design.
+
+pink: #EFB0C9
+blue: #a2d2ff
+white: #ffffff
+*/
+
+body {
+    color: #ffffff;
+    background: #a2d2ff;
+    text-align: center;
+    font-family: 'Happy Monkey', cursive;
+}
+
+#nick-photo {
+    border: 6px solid #EFB0C9;
+    width: 150px;
+    border-radius: 50%;
+}

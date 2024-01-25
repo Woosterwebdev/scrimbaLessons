@@ -11,7 +11,7 @@ Challenge 2:
 Select the logo using its "id", and reduce its
 width to a suitable level.
 */
-.spacex-logo {
+#spacex-logo {
     width: 100px;
 }
 

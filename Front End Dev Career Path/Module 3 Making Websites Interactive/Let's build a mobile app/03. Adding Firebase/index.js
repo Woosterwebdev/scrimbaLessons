@@ -20,4 +20,22 @@ addButtonEl.addEventListener("click", function() {
     push(shoppingListInDB, inputValue)
     
     console.log(inputValue)
+
+    // Challenge: Append a new <li> with text content inputValue to the 'shopping-list' <ul>
+    // Challenge: Clear the input field when button is pressed
+    // Challenge: Refactor the line below into its own function.
+    // inputFieldEl = ""
+    // Challenge: Refactor the line below into its own function.
+    // shoppingListEl.innerHTML += `<li>${inputValue}</li>`
+    clearInputFieldEl()
+    appendItemToShoppingListEl(inputValue)
+
 })
+
+function clearInputFieldEl() {
+    inputFieldEl.value = ""
+}
+
+function appendItemToShoppingListEl(itemValue) {
+    shoppingListEl.innerHTML += `<li>${itemValue}</li>`
+}

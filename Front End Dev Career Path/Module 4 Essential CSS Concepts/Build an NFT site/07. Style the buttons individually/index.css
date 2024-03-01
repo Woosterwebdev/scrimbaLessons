@@ -54,6 +54,7 @@ Challenge:
    border-radius: 4.6px;
    font-weight: 500;
    text-decoration: none;
+   display: inline-block;
 }
 
 .btn:hover, .btn:active{

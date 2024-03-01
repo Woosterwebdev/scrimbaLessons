@@ -36,18 +36,6 @@ a:hover, p a:active {
 
 /* Layout */
 
-/* 
-Challenge:
-1. Give the images in section two a class.
-2. Use that class to set the width and 
-   border-radius for the images.
-3. Wrap the two images in a container div 
-   and give it a class.
-4. Create the CSS selector for that class 
-   and use flex-box to layout the images
-   as shown in the slide.
-*/
-
 header{
    background-color: #5f29a3;
    padding: 45px 0;
@@ -79,4 +67,19 @@ section{
 .feature-image {
    width: 300px;
    border-radius: 4.6px;
+}
+
+/* 
+Challenge:
+1. Center the footer's text horizontally.
+2. Give the text space top and bottom.
+   ⚠️ Don't add margin! Look at sections
+   and header for inspiration. 
+3. Give the text the correct color.
+*/
+
+footer {
+   padding: 45px 0;
+   text-align: center;
+   color: #5f29a3;
 }

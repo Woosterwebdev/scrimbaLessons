@@ -1,0 +1,59 @@
+<!--### Instructions
+Further exploring the box model, we want to make our sections’ headings look a little fancier.
+
+#### Add a border on the top and bottom of the `h2` elements
+- Width: 1px
+- Color: #C4C4C4
+- To accomplish this without the spacing between the other text being changed, you’ll have to remember how the box model works.-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HTML & CSS Fundamentals | Challenges</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header class="dark">
+      <div class="container">
+        <h1>Hello, my name is <span class="bold-text">Sophie</span></h1>
+        <img src="img/sophie.png" alt="portrait of Sophie smiling" />
+      </div>
+    </header>
+
+    <main>
+      <section class="about-me">
+        <div class="container">
+          <h2>I am a <span class="bold-text">graphic designer</span></h2>
+          <p>
+            Ultricies morbi urna lectus magna quisque ultricies velit enim nisi
+            mi volutpat amet id id porta auctor at viverra consequat turpis quam
+            enim amet vulputate.
+          </p>
+          <a class="btn" href="#">See my work</a>
+        </div>
+      </section>
+
+      <section class="articles dark">
+        <div class="container">
+          <h2>My most recent <span class="bold-text">article</span></h2>
+          <article>
+            <h3>Design systems that scale</h3>
+            <p class="article-credit">Writen by Sophie on June 19, 2020</p>
+            <p>
+              Ultricies morbi urna lectus magna quisque ultricies velit enim
+              nisi mi volutpat amet id id porta auctor at viverra consequat
+              turpis quam enim... <a href="#">continue reading</a>
+            </p>
+          </article>
+          <a class="btn" href="#">See all my work</a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

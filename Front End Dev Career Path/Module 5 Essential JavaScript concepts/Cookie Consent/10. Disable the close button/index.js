@@ -13,6 +13,10 @@ modalCloseBtn.addEventListener('click', function(){
 
 consentForm.addEventListener('submit', function(e){
     e.preventDefault()
+    
+    const consentFormData = new FormData(consentForm)
+    const fullName = consentFormData.get('fullName')
+    
     modalText.innerHTML = `
     <div class="modal-inner-loading">
         <img src="images/loading.svg" class="loading">
@@ -20,30 +24,27 @@ consentForm.addEventListener('submit', function(e){
     </div>` 
     
     setTimeout(function(){
-        document.getElementById('upload-text').innerText = "Making the sale..."
+        document.getElementById('upload-text').innerText = `
+        Making the sale...`
     }, 1500)
-  
+    
 /*   
 Challenge: 
-1. Make it so that 1.5 seconds after seeing the 
-   "Making the sale..." message, the modal is 
-   cleared of its content and the following 
-   string of HTML is displayed instead.
-   
-   `<h2>Thanks you sucker! </h2>
-    <p>We just sold the rights to your eternal soul.</p>
-    <div class="idiot-gif">
-        <img src="images/pirate.gif">
-    </div>
-    ` 
-*/  
+1. Make the button that closes the modal disabled.
+2. Make that button become usable when the final 
+   modal message has been displayed to the user.
+*/ 
+
     setTimeout(function(){
         document.getElementById('modal-inner').innerHTML = `
-        <h2>Thanks you sucker! </h2>
-            <p>We just sold the rights to your eternal soul.</p>
-            <div class="idiot-gif">
-                <img src="images/pirate.gif">
-            </div>`
+        <h2>Thanks <span class="modal-display-name">${fullName}</span>, you sucker! </h2>
+        <p>We just sold the rights to your eternal soul.</p>
+        <div class="idiot-gif">
+            <img src="images/pirate.gif">
+        </div>
+    `
+    modalCloseBtn.disabled = false
+    
     }, 3000)
-
-})
+  
+}) 

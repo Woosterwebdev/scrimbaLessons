@@ -65,8 +65,32 @@ function getSingleCatObject(){
 }
 
 function renderCat(){
+    /*
+    Challenge:
+    1. Take the object that is returned by 
+       getSingleCatObject and save it to a const 
+       called "catObject".
+    2. Set memeModalInner’s innerHTML to the HTML 
+       string below, remembering to insert the relevant 
+       data from catObject to replace the UPPERCASE text.
+    3. Set memeModal’s display property to "flex". 
+     
+           `<img 
+            class="cat-img" 
+            src="./images/CAT IMAGE"
+            alt="CAT ALT TEXT"
+            >`
+    */ 
     
-}
+        const catObject = getSingleCatObject()
+        memeModalInner.innerHTML = `
+            <img 
+            class="cat-img" 
+            src="./images/${catObject.image}"
+            alt="${catObject.alt}"
+            >`
+        memeModal.style.display = 'flex'
+    }
 
 function getEmotionsArray(cats){
     const emotionsArray = []    

@@ -12,12 +12,6 @@ document.addEventListener('click', function(e){
     } else if(e.target.dataset.retweet){
         handleRetweetClick(e.target.dataset.retweet)
     }
-/*
-Challenge:
-1. Make this eventListener call "handleRetweetClick" 
-   when the retweet icon is clicked, passing in the
-   uuid from that tweet.  
-*/
 })
     
 function handleLikeClick(tweetId){ 
@@ -35,14 +29,6 @@ function handleLikeClick(tweetId){
 }
 
 function handleRetweetClick(tweetId){
-    /*
-    Challenge:
-    2. Find the retweeted tweet's object in tweetsData 
-       and save it to a const.
-    3. Increment or decrement the retweet count of the 
-       tweet and flip its isRetweeted boolean.
-    4. Call the render function.  
-    */
     const targetTweetObj = tweetsData.filter(function(tweet){
         return tweet.uuid === tweetId
     })[0]
@@ -60,6 +46,37 @@ function getFeedHtml(){
     let feedHtml = ``
 
     tweetsData.forEach(function(tweet){
+
+/*
+Challenge:
+1. Use an if statement to set the value of 
+   'likeIconClass' to the string 'liked' 
+   if the tweet has been liked. 
+2. In the like icon tag, add 'likeIconClass' 
+   to the list of classes.
+*/
+        
+/*
+Challenge:
+1. Use an if statement to set the value of 
+   'retweetIconClass' to the string 
+   'retweeted' if the tweet has been retweeted. 
+2. In the retweet icon tag, add 'retweetIconClass' 
+   to the list of classes.
+*/
+      
+        let likeIconClass = ''
+        
+        if (tweet.isLiked){
+            likeIconClass = 'liked'
+        }
+
+        let retweetIconClass = ''
+
+        if (tweet.isRetweeted){
+            retweetIconClass = 'retweeted'
+        }
+
         feedHtml += `
 <div class="tweet">
     <div class="tweet-inner">
@@ -73,11 +90,11 @@ function getFeedHtml(){
                     ${tweet.replies.length}
                 </span>
                 <span class="tweet-detail">
-                    <i class="fa-solid fa-heart" data-like="${tweet.uuid}"></i>
+                    <i class="fa-solid fa-heart ${likeIconClass}" data-like="${tweet.uuid}"></i>
                     ${tweet.likes}
                 </span>
                 <span class="tweet-detail">
-                    <i class="fa-solid fa-retweet" data-retweet="${tweet.uuid}"></i>
+                    <i class="fa-solid fa-retweet ${retweetIconClass}" data-retweet="${tweet.uuid}"></i>
                     ${tweet.retweets}
                 </span>
             </div>   

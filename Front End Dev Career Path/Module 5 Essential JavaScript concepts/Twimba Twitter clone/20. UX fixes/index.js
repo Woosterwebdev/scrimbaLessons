@@ -1,11 +1,11 @@
 import { tweetsData } from './data.js'
-const tweetInput = document.getElementById('tweet-input')
+import { v4 as uuidv4 } from 'https://jspm.dev/uuid'
 
 /*
 Challenge:
-1. Somewhere in index.js there is a line of code 
-   we no longer need. Find it and delete it!
-*/ 
+3. We could improve index.js by moving one line
+   of code to a better position. Find it and move it!
+*/
 
 document.addEventListener('click', function(e){
     if(e.target.dataset.like){
@@ -20,11 +20,6 @@ document.addEventListener('click', function(e){
     else if(e.target.id === 'tweet-btn'){
         handleTweetBtnClick()
     }
-/*
-Challenge:
-1. Add an else if so that if the Tweet button
-   is clicked, handleTweetBtnClick is called.
-*/ 
 })
 
 function handleLikeClick(tweetId){ 
@@ -62,7 +57,27 @@ function handleReplyClick(replyId){
 }
 
 function handleTweetBtnClick(){
-    console.log(tweetInput.value)
+    const tweetInput = document.getElementById('tweet-input')
+    /*
+    Challenge:
+    1. No empty tweets!
+    2. Clear the textarea after tweeting!
+    */
+    if (tweetInput.value){
+        tweetsData.unshift({
+            handle: `@Scrimba`,
+            profilePic: `images/scrimbalogo.png`,
+            likes: 0,
+            retweets: 0,
+            tweetText: tweetInput.value,
+            replies: [],
+            isLiked: false,
+            isRetweeted: false,
+            uuid: uuidv4()
+        })
+    render()
+    tweetInput.value = ''
+    }
 }
 
 function getFeedHtml(){

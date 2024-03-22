@@ -1,0 +1,1 @@
+const rainJanuaryByWeek = [ 10, 20, 0, 122 ]

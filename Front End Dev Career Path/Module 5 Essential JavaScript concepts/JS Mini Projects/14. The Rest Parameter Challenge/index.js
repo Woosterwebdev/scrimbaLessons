@@ -1,4 +1,12 @@
-function getLabelsHtml() {
+function getLabelsHtml(text, sender, ...staff) {
+    return staff.map(employee =>`
+    <div class="label-card">
+        <p>Dear ${employee.name} </p>
+        <p>${text}</p>
+        <p>Best wishes,</p>
+        <p>${sender}</p>
+    </div>`
+    ).join('')
     /*
     Challenge:
     1. Add parameters.
@@ -7,12 +15,7 @@ function getLabelsHtml() {
     3. Return HTML template for each label.
     */
     
-    // `<div class="label-card">
-    //     <p>Dear **NAME** </p>
-    //     <p>${text}</p>
-    //     <p>Best wishes,</p>
-    //     <p>${sender}</p>
-    // </div>`
+    
     }
     
     const text = 'Thank you for all your hard work throughout the year! 🙏🎁'

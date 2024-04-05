@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="counter">
+      <h1>Days since last failed print:</h1>
+      <h2 id="days-el">0</h2>
+      <button id="days-btn" onclick="days()">Day without failed print</button>
+      <button id="fail-btn" onclick="fail()">Failed Print</button>
+      <p id="fail-el">Previous streaks:</p>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Source Sans 3", sans-serif;
+    background-color: #C6C6C6;
+}
+
+.container {
+    max-width: 375px;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.m-10 {
+    margin: 10px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+/* Header Layout */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    border-bottom: 2px solid #C6C6C6;
+}
+
+.logo {
+    height: 55px;
+    padding: 15px;
+}
+
+#avatar {
+    padding: 15px;
+}
+/* Add JS on scroll funstion for sticky header */
+/* .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+} */
+
+/* Post Header Layout */
+
+.post-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+}
+
+.avatar {
+    border-radius: 50%;
+    height: 35px;
+}
+
+.name {
+    display: block;
+    line-height: 1;
+}
+
+.name-loaction p {
+    font-size: 12;
+    margin: 0;
+    line-height: 1;
+}
+
+/* Post Body */
+
+.user-caption {
+    padding-bottom: 15px;
+}
+
+.post-img {
+    max-width: 375px;
+}
+
+.icon {
+    margin: 0 9px 0 0;
+    height: 25px;
+    display: inline;
+}
+
+.icon:hover,
+.icon:focus {
+    opacity: .3;
+}
+
+/* padding for stick header */
+/* section {
+    padding-top: 72px;
+} */

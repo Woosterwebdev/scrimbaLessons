@@ -114,10 +114,27 @@ header,
     margin: 0 auto 2em;
 }
 
+/*
+  Challenge: Wrap the feature-item divs with flexbox
+    1. Each .feature-item should grow from an initial main size of 220px
+    2. Allow the items inside .section-two-image-container to
+       wrap onto multiple lines
+    3. Apply a gap between each .feature-item
+*/
+
+.section-two-image-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
 .feature-image {
     width: 100%;
     border-radius: 4.6px;
-    margin-bottom: 1em;
+}
+
+.feature-item {
+    flex: 1 220px;
 }
 
 footer {
@@ -143,17 +160,6 @@ ul {
 
 /* ----- MEDIA QUERIES ----- */
 
-@media (min-width: 480px) {
-    .section-two-image-container {
-        display: flex;
-        justify-content: space-between;
-    }
-    
-    .feature-image {
-        width: 48.8%;        
-    }
-}
-
 @media (max-width: 767px) {
     header {
         text-align: center;
@@ -161,8 +167,8 @@ ul {
 
     nav {
         margin-top: 1.5em;
-    }  
-
+    }
+ 
     li:not(:last-child) {
         border-bottom: 1px dotted #a190b6;
     }  
@@ -175,20 +181,20 @@ ul {
         padding: 2.875em 0;        
     }
     
-    header .container, 
+    header .container,
     nav ul {
         display: flex;
     }
-
+    
     header .container {
         justify-content: space-between;
         align-items: center;
     }
-
+    
     nav li {
         margin-left: 1.25em;
     }
-
+    
     .btn {
         display: inline-block;
         margin-right: 0.5em;

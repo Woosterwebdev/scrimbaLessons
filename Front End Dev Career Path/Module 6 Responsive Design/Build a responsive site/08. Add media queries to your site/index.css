@@ -6,12 +6,6 @@ body {
 
 /* ----- TYPOGRAPHY ----- */
 
-/*
-  Challenge:
-   - Change all the font-sizes from em to rem:
-     h1, h2, h3, .subheading, and .btn
-*/
-
 h1, 
 h3 {
     margin: 0;
@@ -33,7 +27,7 @@ h3 {
 }
 
 p {
-    line-height: 23px;
+    line-height: 1.5;
 }
 
 .subheading {

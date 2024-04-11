@@ -1,6 +1,7 @@
 body {
     font-family: 'Source Sans Pro', sans-serif;
     color: #404040;
+    margin: 0;
 }
 
 /* =================
@@ -21,18 +22,49 @@ h1 {
 }
 
 /* =================
-    Intro
+    Flex containers
    ================= */
+
+   .intro,
+   .main-content {
+       display: flex;
+       flex-direction: column;    
+   }
    
-.intro { 
-    color: #fff;
-    background-color: #9480e4;
-}
-
-/* ====================
-    Main content
-   ==================== */
-
+   /* =================
+       Intro
+      ================= */
+   
+   .intro { 
+       justify-content: center;
+       min-height: 250px;
+       text-align: center;
+       color: #fff;
+       background-color: #9480e4;
+   }
+   
+   /* ====================
+       Main content
+      ==================== */
+      
+   /* 
+     Challenge: Style the main content
+       - Use flexbox to horizontally center all items inside 
+         .main-content. The <p> text should remain left-aligned.
+       - Use em to give .main-content a top padding equal to 40px
+         and a left and right padding equal to 32px.
+       - Set the width of .img-main to 120px and display it as a rounded image.
+   */
+   
+   .main-content {
+       align-items: center;
+       padding: 2.5em 2em 0;
+   }
+   
+   .img-main {
+       width: 120px;
+       border-radius: 50%;
+   }
 
 /* =================
     Form

@@ -1,0 +1,101 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #404040;
+    margin: 0;
+}
+
+/* =================
+    Typography 
+   ================= */
+
+/* 
+  Challenge: Set the initial styles for text
+    - Set the h1 to a relative font-size value equal to 40px
+    - Apply a text shadow to the h1 using the color value #816fca
+*/
+
+/* 
+  Challenge: Set the initial styles for text
+    - Set the h2 to a relative font-size value equal to 36px
+    - Give the h2 a top and bottom margin value in em equal to 6px
+*/
+
+/* 
+  Challenge: Set the initial styles for text
+    - Set the paragraph to a relative font-size value equal to 18px
+    - Set the p line-height to 1.35 times its font-size value
+    - Give .subheading a bottom margin in em equal to half its font-size value
+*/
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    text-shadow: 0 2px #816fca;
+}
+
+h2 {
+    font-size: 2.25rem;
+    margin: 0.167em 0;
+}
+
+.beta-text { 
+    font-weight: 900;
+}
+
+.subheading {
+    color: #575757;
+    font-weight: 900;
+    margin-bottom: 0.5em;
+}
+
+.main-content p {
+    font-size: 1.125rem;
+    line-height: 1.35;
+}
+
+/* =================
+    Flex containers
+   ================= */
+
+.intro,
+.main-content {
+    display: flex;
+    flex-direction: column;    
+}
+
+/* =================
+    Intro
+   ================= */
+
+.intro { 
+    justify-content: center;
+    min-height: 250px;
+    text-align: center;
+    color: #fff;
+    background-color: #9480e4;
+}
+
+/* ====================
+    Main content
+   ==================== */
+   
+.main-content {
+    align-items: center;
+    padding-top: 2.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.img-main {
+    width: 120px;
+    border-radius: 50%;
+}
+
+/* =================
+    Form
+   ================= */
+   
+
+/* =================
+    Media queries 
+   ================= */

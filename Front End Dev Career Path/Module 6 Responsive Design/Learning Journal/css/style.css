@@ -32,7 +32,7 @@ h1 {
 .container,
 nav ul,
 .logo,
-.recent-posts {
+footer {
     display: flex;
 }
 
@@ -91,31 +91,103 @@ nav a {
     margin: 0;
 }
 
-.date {
+.article-date {
     font-size: 0.75rem;
 }
 
 .main-content h2 {
     font-size: 2rem;
     font-weight: 800;
+    line-height: 1em;
+    margin: 0.625rem 0;
 }
 
 /* =================
     Recent Posts 
    ================= */
 
+.blog-one {
+    grid-area: one;
+}
+
+.blog-two {
+    grid-area: two;
+}
+
+.blog-three {
+    grid-area: thr;
+}
+
+.blog-four {
+    grid-area: fou;
+}
+
+.blog-five {
+    grid-area: fiv;
+}
+
+.blog-six {
+    grid-area: six;
+}
+
 .recent-posts {
+    display: grid;
     width: 90%;
-    margin: 1.5em auto;
-    flex-direction: column;
+    margin: 0 1em;
+    gap: 1em;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "one"
+        "two"
+        "thr";
 }
 
 a {
     text-decoration: none;
 }
 
+a:visited{
+    color: #0E0E0E;
+}
+
 a img {
     width: 100%;
+}
+
+.article-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1em;
+    margin: 0.3em 0;
+}
+
+.blog-four,
+.blog-five,
+.blog-six {
+    display: none;
+}
+
+/* =================
+    Footer
+   ================= */
+
+footer {
+    background-color: #202020;
+    color: #D7D7D7;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 110px;
+}
+
+p {
+    margin: 0;
+    font-size: 0.75rem;
+}
+
+.my-journal {
+    color: #ECECEC;
+    font-weight: bold;
 }
 
 /* =================

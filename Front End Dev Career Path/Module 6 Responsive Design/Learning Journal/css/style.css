@@ -31,7 +31,8 @@ h1 {
 .site-header, 
 .container,
 nav ul,
-.logo {
+.logo,
+.recent-posts {
     display: flex;
 }
 
@@ -97,6 +98,24 @@ nav a {
 .main-content h2 {
     font-size: 2rem;
     font-weight: 800;
+}
+
+/* =================
+    Recent Posts 
+   ================= */
+
+.recent-posts {
+    width: 90%;
+    margin: 1.5em auto;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+}
+
+a img {
+    width: 100%;
 }
 
 /* =================

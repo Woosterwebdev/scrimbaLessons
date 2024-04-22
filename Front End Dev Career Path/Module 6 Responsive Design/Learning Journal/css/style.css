@@ -10,10 +10,6 @@ body {
     font-weight: 400;
 }
 
-.container {
-    max-width: 600px;
-}
-
 /* =================
     Typography 
    ================= */
@@ -29,8 +25,7 @@ h1 {
    ================= */
 body,
 .site-header,
-.recent-posts,
-footer {
+.recent-posts {
     display: grid;
 }
 
@@ -96,26 +91,38 @@ main {
 }
 
 .main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    min-height: 294px;
     background-image: url(../images/workstaion.jpg);
     background-size: cover;
     background-position: center;
     color: #fff;
 }
 
-.main-content h2,
-.main-content p {
+.main-content .date,
+.title,
+.content {
     margin: 0;
+    padding: 0 1.25rem;
+
 }
 
-.article-date {
+.date {
     font-size: 0.75rem;
 }
 
-.main-content h2 {
+.title {
     font-size: 2rem;
     font-weight: 800;
     line-height: 1em;
     margin: 0.625rem 0;
+}
+
+.content {
+    padding-bottom: 1em;
+    font-weight: 400;
 }
 
 /* =================
@@ -149,13 +156,15 @@ main {
 .recent-posts {
     display: grid;
     grid-area: post;
-    width: 90%;
-    gap: 1em;
-    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 1em 0;
+    grid-template-columns: 1em 1fr 1em;
+    /* grid-template-rows: repeat(3, minmax(1fr, 368px)); */
     grid-template-areas: 
-        "one"
-        "two"
-        "thr";
+        "... ... ..."
+        "... one ..."
+        "... two ..."
+        "... thr ...";
 }
 
 a {
@@ -166,15 +175,20 @@ a:visited{
     color: #0E0E0E;
 }
 
-a img {
+img {
     width: 100%;
 }
 
 .article-title {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.375rem;
+    font-weight: 800;
     line-height: 1em;
-    margin: 0.3em 0;
+    margin: 0.5rem 0;
+}
+
+.article-content {
+    font-weight: 400;
+    font-size: 1rem;
 }
 
 .blog-four,
@@ -190,15 +204,21 @@ a img {
 footer {
     background-color: #202020;
     color: #D7D7D7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     height: 110px;
 }
 
-p {
+.copyright {
     margin: 0;
     font-size: 0.75rem;
 }
 
 .my-journal {
+    margin: 0;
     color: #ECECEC;
     font-weight: bold;
 }

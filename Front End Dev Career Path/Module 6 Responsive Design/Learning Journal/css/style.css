@@ -95,9 +95,8 @@ main {
     flex-direction: column;
     justify-content: end;
     min-height: 294px;
-    background-image: url(../images/workstaion.jpg);
+    background: url(../images/workstaion.jpg) no-repeat center;
     background-size: cover;
-    background-position: center;
     color: #fff;
 }
 
@@ -156,15 +155,14 @@ main {
 .recent-posts {
     display: grid;
     grid-area: post;
-    width: 100%;
-    gap: 1em 0;
-    grid-template-columns: 1em 1fr 1em;
-    /* grid-template-rows: repeat(3, minmax(1fr, 368px)); */
-    grid-template-areas: 
-        "... ... ..."
-        "... one ..."
-        "... two ..."
-        "... thr ...";
+    width: 90%;
+    margin: 1.25em auto;
+    gap: 1em;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "one"
+        "two"
+        "thr";
 }
 
 a {
@@ -175,8 +173,15 @@ a:visited{
     color: #0E0E0E;
 }
 
-img {
+article img {
     width: 100%;
+    object-fit: cover;
+    border-radius: 0.2rem;
+    height: 14.5rem;
+}
+
+article {
+    height: 100%;
 }
 
 .article-title {
@@ -195,6 +200,19 @@ img {
 .blog-five,
 .blog-six {
     display: none;
+}
+
+.view-more {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    border: none;
+    background: #fff;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 1.5em;
 }
 
 /* =================

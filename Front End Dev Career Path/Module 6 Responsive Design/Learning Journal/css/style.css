@@ -34,7 +34,7 @@ body {
     grid-template-areas: 
         "head"
         "main"
-        "post"
+        "recent"
         "foot";
 
 }
@@ -49,9 +49,9 @@ footer {
 
 .site-header {
     grid-area: head;
-    grid-template-columns: 1.4em 2fr 1fr 1fr 1fr;
+    grid-template-columns: 1.4em 3fr 1fr 1fr;
     grid-template-areas: 
-        "logo name .... home abou";
+        "logo name home abou";
     padding: 1em;
 }
 
@@ -83,14 +83,14 @@ h1 {
 }
 
 /* ====================
-    Main content
+    Home Main content
    ==================== */
 
 main {
     grid-area: main;
 }
 
-.main-content {
+.home-main-content {
     display: flex;
     flex-direction: column;
     justify-content: end;
@@ -100,7 +100,16 @@ main {
     color: #fff;
 }
 
-.main-content .date,
+.post-link {
+    text-decoration: none;
+    color: #fff;    
+}
+
+.post-link:visited {
+    color: #fff;
+}
+
+.date,
 .title,
 .content {
     margin: 0;
@@ -117,11 +126,35 @@ main {
     font-weight: 800;
     line-height: 1em;
     margin: 0.625rem 0;
+    text-shadow: 0 0 3px #000;
 }
 
 .content {
     padding-bottom: 1em;
     font-weight: 400;
+    font-size: 1rem;
+}
+
+/* =================
+        Post 
+   ================= */
+
+.post-main,
+.post {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-main {
+    align-items: center;
+}
+
+.post {
+    width: 90%;
+}
+
+.post-img {
+    width: 100%;
 }
 
 /* =================
@@ -154,7 +187,7 @@ main {
 
 .recent-posts {
     display: grid;
-    grid-area: post;
+    grid-area: recent;
     width: 90%;
     margin: 1.25em auto;
     gap: 1em;
@@ -169,7 +202,7 @@ a {
     text-decoration: none;
 }
 
-a:visited{
+a:visited {
     color: #0E0E0E;
 }
 

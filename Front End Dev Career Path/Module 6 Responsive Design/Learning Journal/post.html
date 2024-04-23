@@ -3,28 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Posts</title>
+    <title>My Learning Journal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <header class="site-header">
       <img class="logo" src="./images/journal.png" alt="Journal Logo" />
       <h1 class="name">My learning journal</h1>
-      <a class="home" href="#">Home</a>
+      <a class="home" href="index.html">Home</a>
       <a class="about" href="./about.html">About Me</a>
     </header>
     <main class="post-main">
       <div class="post">
         <p class="date">April 17, 2024</p>
-        <h1>My new journey as a bootcamp student.</h1>
-        <p>
+        <h1 class="headline">My new journey as a bootcamp student.</h1>
+        <p class="">
           After several months of learning in the Frontend Developer Career
           Path, I've made the big jump over to the Bootcamp to get expert code
           reviews of my Solo Projects projects and meet like-minded peers.
         </p>
-        <img class="post-img" src="./images/laptop-coding-desk.jpg" />
+        <img class="post-img mtb-10" src="./images/laptop-coding-desk.jpg" />
 
-        <h3>How I stay committed to learning</h3>
+        <h3 class="question">How I stay committed to learning</h3>
         <p>
           I like to think of myself as a lifelong learner. I used to spend hours
           and hours learning, then try to create simple projects using what I
@@ -32,7 +38,7 @@
           fun, I felt like it would be helpful to share what I was learning and
           most things about my journey with the world.
         </p>
-        <h3>How I got started</h3>
+        <h3 class="question">How I got started</h3>
         <p>
           I started simple and gradually grew my learning journal site. I would
           take notes about what I was learning. After each learning session, I'd
@@ -42,7 +48,7 @@
           summaries was also helping others learn and stay motivated.
         </p>
       </div>
-      <h2>Recent Posts</h2>
+      <p class="bold mb-0">Recent Posts</p>
       <div class="recent-posts">
         <a class="blog-one" href="#">
           <article>
@@ -131,8 +137,8 @@
       </div>
     </main>
     <footer>
-      <p>My Learning Journal</p>
-      <p>Copyright &copy; 2024</p>
+      <p class="my-journal m-0">My Learning Journal</p>
+      <p class="copyright m-0">Copyright &copy; 2024</p>
     </footer>
     <script src="index.js" type="module"></script>
   </body>

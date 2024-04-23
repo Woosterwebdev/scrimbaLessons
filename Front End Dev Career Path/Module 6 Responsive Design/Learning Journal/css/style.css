@@ -10,14 +10,34 @@ body {
     font-weight: 400;
 }
 
-/* =================
-    Typography 
-   ================= */
+.text-shadow {
+    text-shadow: 0 0 3px #000;
+}
 
-h1 {
-    font-family: "Roboto", sans-serif;
-    font-weight: 900;
-    font-size: 0.85em;
+.bold {
+    font-weight: 800;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.m-0 {
+    margin: 0;
+}
+
+.m-10 {
+    margin: 10px;
+}
+
+.mtb-10 {
+    margin: 10px 0;
+}
+
+.space {
+    margin: 0;
+    padding: 0 1.25rem;
+
 }
 
 /* =================
@@ -62,6 +82,9 @@ footer {
 }
 
 .name {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-size: 0.85em;
     grid-area: name;
 }
 
@@ -109,14 +132,6 @@ main {
     color: #fff;
 }
 
-.date,
-.title,
-.content {
-    margin: 0;
-    padding: 0 1.25rem;
-
-}
-
 .date {
     font-size: 0.75rem;
 }
@@ -126,7 +141,6 @@ main {
     font-weight: 800;
     line-height: 1em;
     margin: 0.625rem 0;
-    text-shadow: 0 0 3px #000;
 }
 
 .content {
@@ -153,8 +167,36 @@ main {
     width: 90%;
 }
 
+.headline {
+    font-size: 2em;
+    font-weight: 800;
+    line-height: 1em;
+    padding: 0;
+    margin: 0.625rem 0;
+}
+
 .post-img {
     width: 100%;
+}
+
+.question {
+    font-size: 1rem;
+}
+
+/* =================
+     About Me 
+   ================= */
+
+.about-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.author-image {
+    width: 200px;
+    height: 200px;
+    margin: 1em;
+    border-radius: 50%;
 }
 
 /* =================
@@ -264,12 +306,10 @@ footer {
 }
 
 .copyright {
-    margin: 0;
     font-size: 0.75rem;
 }
 
 .my-journal {
-    margin: 0;
     color: #ECECEC;
     font-weight: bold;
 }

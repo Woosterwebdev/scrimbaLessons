@@ -1,0 +1,360 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html, 
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Source Sans 3", sans-serif;
+    font-weight: 400;
+}
+
+.text-shadow {
+    text-shadow: 0 0 3px #000;
+}
+
+.bold {
+    font-weight: 800;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.m-0 {
+    margin: 0;
+}
+
+.m-10 {
+    margin: 10px;
+}
+
+.mtb-10 {
+    margin: 10px 0;
+}
+
+.space {
+    margin: 0;
+    padding: 0 1.25rem;
+
+}
+
+/* =================
+    Layout 
+   ================= */
+body,
+.site-header,
+.recent-posts {
+    display: grid;
+}
+
+body {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "head"
+        "main"
+        "recent"
+        "foot";
+
+}
+
+footer {
+    grid-area: foot;
+}
+
+/* =================
+    Site-header
+   ================= */
+
+.site-header {
+    grid-area: head;
+    grid-template-columns: 1.4em 3fr 1fr 1fr;
+    grid-template-areas: 
+        "logo name home abou";
+    padding: 1em;
+}
+
+.logo{
+    width: 1.4em;
+    grid-area: logo;
+    margin: 0.5em 0;
+}
+
+.name {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-size: 0.85em;
+    grid-area: name;
+}
+
+.home {
+    grid-area: home;
+    margin: 0.5em 0;
+    text-align: right;
+    font-weight: 500;
+}
+
+.about {
+    grid-area: abou;
+    margin: 0.5em 0;
+    text-align: right;
+    font-weight: 500;
+}
+
+h1 {
+    font-size: 1rem;
+    padding-left: 0.25em;
+}
+
+/* ====================
+    Home Main content
+   ==================== */
+
+main {
+    grid-area: main;
+}
+
+.home-main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    min-height: 294px;
+    background: url(../images/workstaion.jpg) no-repeat center;
+    background-size: cover;
+    color: #fff;
+}
+
+.post-link {
+    text-decoration: none;
+    color: #fff;    
+}
+
+.post-link:visited {
+    color: #fff;
+}
+
+.date {
+    font-size: 0.75rem;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1em;
+    margin: 0.625rem 0;
+}
+
+.content {
+    padding-bottom: 1em;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+/* =================
+        Post 
+   ================= */
+
+.post-main,
+.post {
+    display: flex;
+    flex-direction: column;
+}
+
+.post-main {
+    align-items: center;
+}
+
+.post {
+    width: 90%;
+}
+
+.headline {
+    font-size: 2em;
+    font-weight: 800;
+    line-height: 1em;
+    padding: 0;
+    margin: 0.625rem 0;
+}
+
+.post-img {
+    width: 100%;
+}
+
+.question {
+    font-size: 1rem;
+}
+
+/* =================
+     About Me 
+   ================= */
+
+.about-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-me {
+    width: 90%;
+}
+
+.author-image {
+    width: 200px;
+    height: 200px;
+    margin: 1em;
+    border-radius: 50%;
+}
+
+/* =================
+    Recent Posts 
+   ================= */
+
+.blog-one {
+    grid-area: one;
+}
+
+.blog-two {
+    grid-area: two;
+}
+
+.blog-three {
+    grid-area: thr;
+}
+
+.blog-four {
+    grid-area: fou;
+}
+
+.blog-five {
+    grid-area: fiv;
+}
+
+.blog-six {
+    grid-area: six;
+}
+
+.recent-posts {
+    display: grid;
+    grid-area: recent;
+    width: 90%;
+    margin: 1.25em auto;
+    gap: 1em;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "one"
+        "two"
+        "thr";
+}
+
+a {
+    text-decoration: none;
+    color: #0E0E0E;
+}
+
+a:visited {
+    color: #0E0E0E;
+}
+
+article img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0.2rem;
+    height: 14.5rem;
+}
+
+article {
+    height: 100%;
+}
+
+.article-title {
+    font-size: 1.375rem;
+    font-weight: 800;
+    line-height: 1em;
+    margin: 0.5rem 0;
+}
+
+.article-content {
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.blog-four,
+.blog-five,
+.blog-six {
+    display: none;
+}
+
+.view-more {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    border: none;
+    background: #fff;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 1.5em;
+}
+
+/* =================
+    Footer
+   ================= */
+
+footer {
+    background-color: #202020;
+    color: #D7D7D7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 105px;
+    font-size: 0.75rem;
+}
+
+.my-journal {
+    color: #ECECEC;
+    font-weight: bold;
+}
+
+/* =================
+    Media queries 
+   ================= */
+
+@media(min-width: 850px){
+    .site-header {
+        padding: 1em 3em;
+    }
+    .recent-posts {
+        display: grid;
+        grid-area: recent;
+        width: 90%;
+        margin: 1.25em auto;
+        gap: 1em;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "one two thr"
+            "fou fiv six";
+    }
+
+    .blog-four,
+    .blog-five,
+    .blog-six {
+    display: block;
+    }
+
+    .logo {
+        width: 1.4em;
+        margin: 0.75em 0;
+    }
+
+    .name {
+        font-size: 1.25em;
+    }
+
+    .about {
+        text-align: center;
+    }
+}

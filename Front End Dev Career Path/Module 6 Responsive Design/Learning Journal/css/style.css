@@ -92,12 +92,14 @@ footer {
     grid-area: home;
     margin: 0.5em 0;
     text-align: right;
+    font-weight: 500;
 }
 
 .about {
     grid-area: abou;
     margin: 0.5em 0;
     text-align: right;
+    font-weight: 500;
 }
 
 h1 {
@@ -190,6 +192,11 @@ main {
 .about-main {
     display: flex;
     flex-direction: column;
+    align-items: center;
+}
+
+.about-me {
+    width: 90%;
 }
 
 .author-image {
@@ -242,6 +249,7 @@ main {
 
 a {
     text-decoration: none;
+    color: #0E0E0E;
 }
 
 a:visited {
@@ -302,10 +310,7 @@ footer {
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 110px;
-}
-
-.copyright {
+    height: 105px;
     font-size: 0.75rem;
 }
 
@@ -318,3 +323,38 @@ footer {
     Media queries 
    ================= */
 
+@media(min-width: 850px){
+    .site-header {
+        padding: 1em 3em;
+    }
+    .recent-posts {
+        display: grid;
+        grid-area: recent;
+        width: 90%;
+        margin: 1.25em auto;
+        gap: 1em;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "one two thr"
+            "fou fiv six";
+    }
+
+    .blog-four,
+    .blog-five,
+    .blog-six {
+    display: block;
+    }
+
+    .logo {
+        width: 1.4em;
+        margin: 0.75em 0;
+    }
+
+    .name {
+        font-size: 1.25em;
+    }
+
+    .about {
+        text-align: center;
+    }
+}

@@ -7,8 +7,6 @@ Challenge:
     https://dog.ceo/api/breeds/image/random
 */
 
-async function dogImages() {
-    const response = await fetch("https://dog.ceo/api/breeds/image/random");
-    const dog = await response.json();
-    console.log(dog);
-}
+fetch("https://dog.ceo/api/breeds/image/random")
+    .then(response => response.json())
+    .then(data => console.log(data));

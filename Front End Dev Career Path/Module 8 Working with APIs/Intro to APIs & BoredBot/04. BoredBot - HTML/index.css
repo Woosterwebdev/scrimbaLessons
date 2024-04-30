@@ -1,0 +1,58 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+} 
+
+body {
+    margin: 0;
+    /* uigradients.com */
+    background: #bdc3c7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-repeat: no-repeat;
+    height: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.flex {
+    display: flex;
+}
+
+.container {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 3em;
+    height: 4em;
+}
+
+#title {
+    text-shadow: -1px 1px 3px #31363F;
+    margin-top: 0;
+    font-size: 2.25rem;
+}
+
+.activity-name {
+    margin-top: 4.25em;
+    font-size: 1rem;
+}
+
+.btn {
+    background: #41B06E;
+    border: 3px solid #1A4D2E;
+    border-radius: 50%;
+    height: 5em;
+    width: 5em;
+}
+
+.btn:hover,
+.btn:active {
+    background: #8DECB4;
+    border: 3px solid #41B06E;
+    cursor: pointer;
+}

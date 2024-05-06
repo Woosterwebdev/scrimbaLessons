@@ -1,0 +1,68 @@
+/* colors
+    #00215E
+    #2C4E80
+    #FFF
+    #fcd386 */
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Montserrat", sans-serif;
+    }
+        
+    /* General Use */
+        
+    .m-0 {
+        margin: 0;
+    }
+    
+    .m-10 {
+        margin-bottom: 0.625em;
+    }
+        
+    /* NAV */
+        
+    nav {
+        background: #00215E;
+        color: #fff;
+        padding: 0.3125em;
+        height: 1.875em;
+        display: flex;
+        align-items: center;
+        position: fixed;
+        width: 100%;
+    }
+        
+    nav > h3 {
+        font-family: "Satisfy", cursive;
+        font-size: 1rem;
+    }
+        
+    /* Post Form */
+    
+    form {
+        background: #fcd386;
+        padding: 3.75em 0.625em 0.625em;
+        display: grid; 
+    }
+    
+    textarea{
+        resize: none;
+    }
+    
+    button {
+        background: #00215E;
+        color: #fff;
+        font-family: "Satisfy", cursive; 
+        width: 6em;
+        padding: 0.1875em;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    /* Blog List */
+        
+    #blog-list {
+        padding: 0.625em; 
+    }

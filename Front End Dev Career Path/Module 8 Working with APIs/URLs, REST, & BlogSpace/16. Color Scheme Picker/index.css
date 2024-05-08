@@ -2,3 +2,35 @@ body {
     margin: 0;
     padding: 0;
 }
+
+/* Flex Containers */
+
+body,
+header,
+.container {
+    display: flex;
+}
+
+/* Grid Containers */
+
+#color-swatches {
+    display: grid;
+}
+
+/* Layout */
+
+.container {
+    justify-content: space-around;
+    align-items: center;
+    width: 80vh;
+}
+
+/* Header */
+
+
+
+/* Colors */
+
+.colors {
+    grid-template-columns: auto;
+}

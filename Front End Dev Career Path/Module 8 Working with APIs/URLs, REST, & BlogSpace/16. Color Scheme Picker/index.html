@@ -7,6 +7,35 @@
     <title>Color Scheme Picker</title>
   </head>
   <body>
+    <div class="container">
+      <header>
+      <input type="color" id="seed-color" class="seed-color">
+      <select name="scheme-select" id="scheme-select">
+        <option value="monochrome">Monochrome</option>
+        <option value="monochrome-light">Monochrome - light</option>
+        <option value="monochrome-dark">Monochrome - dark</option>
+        <option value="analogic">Analogic</option>
+        <option value="compliment">Compliment</option>
+        <option value="analogic-compliment">Analogic-compliment</option>
+        <option value="triad">Monochrome</option>
+      </select>
+      <button>Get color scheme</button>
+      </header>
+      <div id="color-swatches" class="colors">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      </div>
+      <footer class="colors">
+      <div>#F55A5A</div>
+      <div>#2B283A</div>
+      <div>#FBF3AB</div>
+      <div>#AAD1B6</div>
+      <div>#A626D3</div>
+      </footer>
+    </div>
     <script src="index.js"></script>
   </body>
 </html>

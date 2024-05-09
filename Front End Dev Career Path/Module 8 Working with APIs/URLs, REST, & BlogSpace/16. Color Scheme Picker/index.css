@@ -9,7 +9,7 @@ body {
 /* Flex Containers */
 
 body,
-header {
+form {
     display: flex;
 }
 
@@ -34,7 +34,7 @@ header {
 
 /* Header */
 
-header {
+form {
     justify-content: space-around;
     align-items: center;
     height: 5.625em;

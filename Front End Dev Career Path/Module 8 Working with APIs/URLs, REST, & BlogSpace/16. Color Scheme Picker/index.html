@@ -12,36 +12,40 @@
     <link rel="stylesheet" href="index.css" />
     <title>Color Scheme Picker</title>
   </head>
-  <body>
-    <div class="container">
-      <form>
-        <input type="color" id="seed-color" class="seed-color" />
-        <select name="scheme-select" id="scheme-select">
-          <option value="monochrome">Monochrome</option>
-          <option value="monochrome-light">Monochrome - light</option>
-          <option value="monochrome-dark">Monochrome - dark</option>
-          <option value="analogic">Analogic</option>
-          <option value="compliment">Compliment</option>
-          <option value="analogic-compliment">Analogic-compliment</option>
-          <option value="triad">Monochrome</option>
-        </select>
-        <button class="btn">Get color scheme</button>
-      </form>
-      <div>
-        <div id="colors" class="colors">
-          <div class="color1"></div>
-          <div class="color2"></div>
-          <div class="color3"></div>
-          <div class="color4"></div>
-          <div class="color5"></div>
-        </div>
-        <div class="colors">
-          <div>#F55A5A</div>
-          <div>#2B283A</div>
-          <div>#FBF3AB</div>
-          <div>#AAD1B6</div>
-          <div>#A626D3</div>
-        </div>
+  <body class="m-0">
+    <form id="color-form" class="m-0">
+      <input
+        type="color"
+        id="seed-color"
+        class="seed-color"
+        name="seed-color"
+        value="#000000"
+      />
+      <select name="scheme-select" id="scheme-select">
+        <option value="monochrome">Monochrome</option>
+        <option value="monochrome-light">Monochrome - light</option>
+        <option value="monochrome-dark">Monochrome - dark</option>
+        <option value="analogic">Analogic</option>
+        <option value="compliment">Compliment</option>
+        <option value="analogic-compliment">Analogic-compliment</option>
+        <option value="triad">Monochrome</option>
+      </select>
+      <button id="btn" class="btn">Get color scheme</button>
+    </form>
+    <div id="color-results">
+      <div id="color-preview" class="colors preview">
+        <div class="color1 width-100"></div>
+        <div class="color2 width-100"></div>
+        <div class="color3 width-100"></div>
+        <div class="color4 width-100"></div>
+        <div class="color5 width-100"></div>
+      </div>
+      <div id="color-hex" class="colors footer">
+        <div class="width-100 text-center">#F55A5A</div>
+        <div class="width-100 text-center">#2B283A</div>
+        <div class="width-100 text-center">#FBF3AB</div>
+        <div class="width-100 text-center">#AAD1B6</div>
+        <div class="width-100 text-center">#A626D3</div>
       </div>
     </div>
     <script src="index.js"></script>

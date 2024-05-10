@@ -78,24 +78,8 @@ select {
     width: 100%;
 }
 
-.color1 {
-    background: #F55A5A;
-}
-
-.color2 {
-    background: #2B283A;
-}
-
-.color3 {
-    background: #FBF3AB;
-}
-
-.color4 {
-    background: #AAD1B6;
-}
-
-.color5 {
-    background: #A626D3;
+.hex-code {
+    cursor: pointer;
 }
 
 .text-center {

@@ -17,12 +17,6 @@ form {
     display: flex;
 }
 
-/* Grid Containers */
-
-.colors {
-    display: grid;
-}
-
 /* Header */
 
 form {
@@ -95,6 +89,10 @@ select {
 
 @media (max-width: 385px) {
     form {
-        gap: 0.2em;
+        gap: 0.1em;
+    }
+    select {
+        flex: 1;
+        font-size: 0.8rem;
     }
 }

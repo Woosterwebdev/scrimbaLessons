@@ -48,10 +48,6 @@ select {
     padding: 0.75em 0.5em;
 }
 
-option:after {
-    color: #5A8DFF;
-}
-
 .btn {
     background: #3D4B60;
     color: #fff;

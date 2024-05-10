@@ -22,31 +22,15 @@
         value="#000000"
       />
       <select name="scheme-select" id="scheme-select">
-        <option value="monochrome">Monochrome</option>
-        <option value="monochrome-light">Monochrome - light</option>
-        <option value="monochrome-dark">Monochrome - dark</option>
-        <option value="analogic">Analogic</option>
-        <option value="compliment">Compliment</option>
-        <option value="analogic-compliment">Analogic-compliment</option>
-        <option value="triad">Monochrome</option>
+        <!-- Rendered options from JS -->
       </select>
       <button id="btn" class="btn">Get color scheme</button>
     </form>
     <div id="color-results">
-      <div id="color-preview" class="colors preview">
-        <div class="width-100"></div>
-        <div class="width-100"></div>
-        <div class="width-100"></div>
-        <div class="width-100"></div>
-        <div class="width-100"></div>
-      </div>
-      <div id="color-hex" class="colors footer">
-        <div class="width-100 text-center"></div>
-        <div class="width-100 text-center"></div>
-        <div class="width-100 text-center"></div>
-        <div class="width-100 text-center"></div>
-        <div class="width-100 text-center"></div>
-      </div>
+      <div id="color-preview" class="colors preview"></div>
+      <!-- Rendered color pallets here -->
+      <div id="color-codes" class="colors footer"></div>
+      <!-- Rendered Hex codes here -->
     </div>
     <script src="index.js"></script>
   </body>

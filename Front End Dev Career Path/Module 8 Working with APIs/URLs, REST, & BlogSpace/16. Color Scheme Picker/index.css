@@ -11,7 +11,7 @@ body {
 
 /* Flex Containers */
 
-#color-hex,
+#color-codes,
 #color-preview,
 form {
     display: flex;
@@ -70,7 +70,7 @@ select {
     height: 60vh;
 }
 
-#color-hex {
+#color-codes {
     height: 2.75em;
 }
 

@@ -3,8 +3,13 @@
  * pass it as the 2nd parameter to our `addEventListener`
  */
 
-document.getElementById('new-deck').addEventListener(('click'), function(e) { 
-    fetch("https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/?deck_count=1")
+function handleClick() {
+    fetch("https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/")
         .then(res => res.json())
         .then(data => console.log(data))
- })
+}
+
+document.getElementById("new-deck").addEventListener("click", handleClick) 
+
+/* handleClick() will run function on load. 
+handleClick won't run until click */

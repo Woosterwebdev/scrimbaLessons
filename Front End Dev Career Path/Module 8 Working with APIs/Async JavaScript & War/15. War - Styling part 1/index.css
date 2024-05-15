@@ -1,4 +1,27 @@
 html, body {
     margin: 0;
     padding: 0;
+    background: url('images/table.png');
+    height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+button {
+    background: #EEC759;
+    color: #114232;
+    border: none;
+    cursor: pointer;
+}
+
+#new-deck {
+    align-self: flex-start;
+}
+
+#draw-cards {
+    padding: 0.3em;
 }

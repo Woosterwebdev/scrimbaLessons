@@ -14,23 +14,6 @@ function handleClick() {
         })
 }
 
-/**
- * Challenge:
- * 
- * Display the number of cards remaining in the deck on the page
- * Hint: Check the data that comes back when we draw 2 new cards
- * to see if there's anything helpful there for this task (😉)
- */
-
-/**
- * Challenge:
- * 
- * Display the number of remaining cards when we request a new deck, 
- * not just when we draw the 2 cards.
- * 
- * Hint: check the data coming back from when we get a new deck.
- */
-
 function determineCardWinner(card1, card2) {
     const valueOptions = ["2", "3", "4", "5", "6", "7", "8", "9", 
     "10", "JACK", "QUEEN", "KING", "ACE"]
@@ -54,6 +37,17 @@ function cardCount(deckCount) {
 
 newDeckBtn.addEventListener("click", handleClick)
 
+/**
+ * Challenge:
+ * 
+ * Disable the Draw button when we have no more cards to draw from
+ * in the deck.
+ * 
+ * Disable both the functionality of the button (i.e. change
+ * `disabled` to true on the button) AND the styling (i.e. add
+ * a `disabled` CSS class to make it look unclickable)
+ */
+
 drawCardBtn.addEventListener("click", () => {
     fetch(`https://apis.scrimba.com/deckofcards/api/deck/${deckId}/draw/?count=2`)
         .then(res => res.json())
@@ -67,5 +61,8 @@ drawCardBtn.addEventListener("click", () => {
             const winnerText = determineCardWinner(data.cards[0], data.cards[1])
             header.textContent = winnerText
             cardCount(data.remaining)
+            if (data.remaining === 0) {
+                drawCardBtn.disabled = true
+            }
         })
 })

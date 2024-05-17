@@ -9,12 +9,14 @@ const remainingCards = document.getElementById('remaining-cards')
 const computerScoreEl = document.getElementById("computer-score")
 const yourScoreEl= document.getElementById("your-score")
 
-async function handleClick() {
-    const res = await fetch("https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/")
-    const data = await res.json()
-    deckId = data.deck_id
-    cardCount(data.remaining)
-    drawCardBtn.disabled = false
+function handleClick() {
+    fetch("https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/")
+        .then(res => res.json())
+        .then(data => {
+            deckId = data.deck_id
+            cardCount(data.remaining)
+            drawCardBtn.disabled = false
+        })
 }
 
 function determineCardWinner(card1, card2) {
@@ -51,27 +53,28 @@ newDeckBtn.addEventListener("click", handleClick)
  * replacing the text of the h2.
  */
 
-drawCardBtn.addEventListener("click", async () => {
-    const res = await fetch(`https://apis.scrimba.com/deckofcards/api/deck/${deckId}/draw/?count=2`)
-    const data = await res.json()
-    cardsContainer.children[1].innerHTML = `
-        <img src=${data.cards[0].image} class="card" />
-        `
-    cardsContainer.children[2].innerHTML = `
-        <img src=${data.cards[1].image} class="card" />
-        `
-    const winnerText = determineCardWinner(data.cards[0], data.cards[1])
-    header.textContent = winnerText
-    cardCount(data.remaining)
-    if (data.remaining === 0) {
-        drawCardBtn.disabled = true
-        if (computerScore > yourScore) {
-            header.textContent = 'Computer wins the game!'
-            } else if (computerScore < yourScore) {
-                header.textContent = 'You won the game!'
-            } else {
-            header.textContent = 'A tie? Seriously?'
+drawCardBtn.addEventListener("click", () => {
+    fetch(`https://apis.scrimba.com/deckofcards/api/deck/${deckId}/draw/?count=2`)
+        .then(res => res.json())
+        .then(data => {
+            cardsContainer.children[1].innerHTML = `
+                <img src=${data.cards[0].image} class="card" />
+            `
+            cardsContainer.children[2].innerHTML = `
+                <img src=${data.cards[1].image} class="card" />
+            `
+            const winnerText = determineCardWinner(data.cards[0], data.cards[1])
+            header.textContent = winnerText
+            cardCount(data.remaining)
+            if (data.remaining === 0) {
+                drawCardBtn.disabled = true
+                if (computerScore > yourScore) {
+                    header.textContent = 'Computer wins the game!'
+                } else if (computerScore < yourScore) {
+                    header.textContent = 'You won the game!'
+                } else {
+                    header.textContent = 'A tie? Seriously?'
+                }
             }
-    }
+        })
 })
-

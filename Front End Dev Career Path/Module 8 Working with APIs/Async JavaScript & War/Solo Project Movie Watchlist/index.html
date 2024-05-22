@@ -3,18 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="index.css" />
     <title>Find your film</title>
   </head>
   <body>
     <header>
-      <div>
+      <div class="title">
         <h1>Find your film</h1>
         <h2>My Watchlist</h2>
       </div>
-      <div>
-        <input type="text" />
-        <input type="submit" />
+      <div id="search-bar">
+        <input id="search-input" type="text" />
+        <button id="search-btn" type="submit">Search</button>
       </div>
     </header>
     <main>

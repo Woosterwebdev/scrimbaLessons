@@ -24,7 +24,11 @@ body {
 
 header,
 div.title,
-#search-bar {
+#search-bar,
+#search-results,
+div.movie-container,
+.details1,
+.details2 {
     display: flex;
 }
 
@@ -52,17 +56,14 @@ h1 {
     font-weight: 900;
 }
 
-h2 a{
+a.page-link{
     text-decoration: none;
     color: inherit;
-}
-
-h2 {
     font-size: 0.875rem;
     font-weight: 800;
 }
 
-div#search-bar {
+#search-bar {
     justify-content: center;
     margin-top: -0.75em;
     width: 80%;
@@ -75,9 +76,10 @@ div#search-bar {
     border: none;
     border-radius: 5px 0 0 5px;
     padding: 0.5em;
-    padding-left: 1.75em;
+    padding-left: 1.85em;
     line-height: 1.25em;
     width: 100%;
+    caret-color: #A5A5A5;
 }
 
 #search-btn {
@@ -89,6 +91,94 @@ div#search-bar {
     padding: 0 2em;
 }
 
+/* Search results initial state */
+
+div.initial-state {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    color: #787878;
+    font-size: 1.125rem;
+    font-weight: 800;
+}
+
+.fa-film {
+    font-size: 70px;
+}
+
+/* Search results populated */
+
+div.populated-results {
+    flex-direction: column;
+    margin: 0 auto;
+    margin-top: 3rem;
+    width: 90%;
+}
+
+div.movie-container {
+    height: 200px;
+    align-items: center;
+}
+
+.movie-container p {
+    margin: 0.4em 0;
+}
+
+.poster {
+    margin-right: 1em;
+    height: 90%;
+}
+
+.details1 {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.movie-title {
+    font-size: 1.125rem;
+}
+
+.details2 {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.55em;
+    font-size: 0.75rem;
+}
+
+.fa-circle-plus {
+    margin-right: 0.3em;
+}
+
+.details3 {
+    font-size: 0.875rem;
+    color: #A5A5A5;
+}
+
+hr {
+    width: 95%;
+    background-color: #2C2C2C;
+    border-color: #2C2C2C;
+    color: #2C2C2C;
+}
+
+/* Search results no data state */
+
+.no-data-state {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 60vh;
+    color: #787878;
+    font-size: 1.125rem;
+    font-weight: 800;
+}
+
+.no-data-state p {
+    width: 75%;
+}
+
 /* Media querries */
 
 @media (min-width: 500px) {
@@ -96,5 +186,13 @@ div#search-bar {
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
+    }
+
+    div.movie-container {
+        gap: 0.5em;
+    }
+
+    .movie-container p {
+        margin: 0.8em 0;
     }
 }

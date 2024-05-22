@@ -28,7 +28,8 @@ div.title,
 #search-results,
 div.movie-container,
 .details1,
-.details2 {
+.details2,
+#my-watchlist {
     display: flex;
 }
 
@@ -177,6 +178,31 @@ hr {
 
 .no-data-state p {
     width: 75%;
+}
+
+/* My Watchlist initial state */
+
+#my-watchlist {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    color: #787878;
+    font-size: 1.125rem;
+    font-weight: 800;
+    text-align: center;
+}
+
+.empty-list {
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+a.to-search {
+    text-decoration: none;
+    color: #FFF;
+    font-size: 0.875rem;
+    font-weight: 700;
 }
 
 /* Media querries */

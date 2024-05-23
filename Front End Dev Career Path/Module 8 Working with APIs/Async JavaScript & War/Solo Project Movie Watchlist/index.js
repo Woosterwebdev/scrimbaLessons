@@ -3,13 +3,15 @@ const apiKey = '453ca794'
 const searchBtnEl = document.getElementById('search-btn')
 const searchInputEl = document.getElementById('search-input')
 const searchResultsEl = document.getElementById('search-results')
+const addToWatchlistEl = document.getElementsByClassName('.add-to-watchlist')
 const myWatchlistEl = document.getElementById('my-watchlist')
 
 searchBtnEl.addEventListener('click', () => fetchResults())
 
 searchInputEl.addEventListener('keypress', (e) => {
-  if (e.key === 'Enter')
+  if (e.key === 'Enter') {
     fetchResults()
+  }
 })
 
 async function fetchResults() {
@@ -32,8 +34,8 @@ async function fetchResults() {
               <div class="details2">
                 <p>${data.Runtime}</p>
                 <p>${data.Genre}</p>
-                <p id='${data.imdbID}' class="add-to-watchlist">
-                <i class="fa-solid fa-circle-plus" style="color: #ffffff"></i>Watchlist</p>
+                <button type="button" id='${data.imdbID}' class="add-to-watchlist">
+                <i class="fa-solid fa-circle-plus" style="color: #ffffff"></i>Watchlist</button>
               </div>
               <div class="details3">
                 <p>
@@ -58,6 +60,7 @@ async function fetchResults() {
   }
 }
 
+addToWatchlistEl.addEventListener(('click'), () => console.log('Clicked'))
 /* 
 <div id="search-results" class="populated-results">
     <div class="movie-container">

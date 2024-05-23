@@ -150,6 +150,12 @@ div.movie-container {
     font-size: 0.75rem;
 }
 
+button.add-to-watchlist {
+    background-color: inherit;
+    color: inherit;
+    border: none;
+}
+
 .fa-circle-plus {
     margin-right: 0.3em;
 }

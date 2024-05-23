@@ -16,87 +16,47 @@ async function fetchResults() {
   const res = await fetch(`${baseUrl}?apikey=${apiKey}&s=${searchInputEl.value}`)
   const data = await res.json()
   // add if statement to handle respnose of false
-  data.Search.forEach(async (movie) => {
-    const res = await fetch(`${baseUrl}?apikey=${apiKey}&i=${movie.imdbID}&plot=short`)
-    const data = await res.json()
-    const resultsHtml = `
-        <div class="movie-container">
-          <img class="poster" src="${data.Poster}" />
-          <div class="movie-details">
-            <div class="details1">
-              <p class="movie-title">${data.Title}</p>
-              <i class="fa-solid fa-star" style="color: #fec654"></i>
-              <p class="imdb-rating">${data.imdbRating}</p>
-            </div>
-            <div class="details2">
-              <p>${data.Runtime}</p>
-              <p>${data.Genre}</p>
-              <p id='${data.imdbID}' class="add-to-watchlist">
-              <i class="fa-solid fa-circle-plus" style="color: #ffffff"></i>Watchlist</p>
-            </div>
-            <div class="details3">
-              <p>
-                ${data.Plot}A blade runner must pursue and terminate four replicants who stole
-                a ship in space and have returned to Earth to find their creator.</p>
+  if (data.Response !== 'False') {
+    data.Search.forEach(async (movie) => {
+      const res = await fetch(`${baseUrl}?apikey=${apiKey}&i=${movie.imdbID}&plot=short`)
+      const data = await res.json()
+      const resultsHtml = `
+          <div class="movie-container">
+            <img class="poster" src="${data.Poster}" />
+            <div class="movie-details">
+              <div class="details1">
+                <p class="movie-title">${data.Title}</p>
+                <i class="fa-solid fa-star" style="color: #fec654"></i>
+                <p class="imdb-rating">${data.imdbRating}</p>
+              </div>
+              <div class="details2">
+                <p>${data.Runtime}</p>
+                <p>${data.Genre}</p>
+                <p id='${data.imdbID}' class="add-to-watchlist">
+                <i class="fa-solid fa-circle-plus" style="color: #ffffff"></i>Watchlist</p>
+              </div>
+              <div class="details3">
+                <p>
+                  ${data.Plot}</p>
+              </div>
             </div>
           </div>
-        </div>
-        <hr />
-  `
-    searchResultsEl.innerHTML += resultsHtml
-  })
-  searchResultsEl.innerHTML = ''
-  searchResultsEl.classList.remove('initial-state')
-  searchResultsEl.classList.add('populated-results')
+          <hr />
+    `
+      searchResultsEl.innerHTML += resultsHtml
+    })
+    searchResultsEl.innerHTML = ''
+    searchResultsEl.classList.remove('initial-state')
+    searchResultsEl.classList.add('populated-results')
+  } else {
+    searchResultsEl.innerHTML = ''
+    searchResultsEl.innerHTML = `
+      <p>Unable to find what you’re looking for. Please try another search.</p>
+    `
+    searchResultsEl.classList.remove('initial-state')
+    searchResultsEl.classList.add('no-data-state')
+  }
 }
-
-// function renderResults(movies) {
-//   let results = ''
-//   movies.forEach((movie) => {
-//     results += `
-//     <div id="search-results" class="populated-results">
-//     <div class="movie-container">
-//         <img class="poster" src="${movie.poster}" />
-//         <div class="movie-details">
-//           <div class="details1">
-//             <p class="movie-title">${movie.title}</p>
-//             <i class="fa-solid fa-star" style="color: #fec654"></i>
-//             <p class="imdb-rating">${}</p>
-//           </div>
-//           <div class="details2">
-//             <p>${} min</p>
-//             <p>${}Action, Drama, Sci-Fi</p>
-//             <p class="add-to-watchlist">
-//               <i class="fa-solid fa-circle-plus" style="color: #ffffff"></i
-//               >Watchlist
-//             </p>
-//           </div>
-//           <div class="details3">
-//             <p>
-//               ${}A blade runner must pursue and terminate four replicants who stole
-//               a ship in space and have returned to Earth to find their creator.
-//             </p>
-//           </div>
-//         </div>
-//     </div>
-//     <hr />
-// </div>
-//     `
-//   })
-// }
-
-
-// fetch('http://www.omdbapi.com/?i=tt3896198&apikey=453ca794&s=${input.value}')
-//     .then(res => res.json())
-//     .then(data => console.log(data)) 
-
-
-
-/* 
-<div id="search-results" class="no-data-state">
-<p>Unable to find what you’re looking for. Please try another search.</p>
-</div>
-*/
 
 /* 
 <div id="search-results" class="populated-results">
@@ -128,7 +88,6 @@ async function fetchResults() {
 </div>
  */
 
-// API with key http://www.omdbapi.com/?i=tt3896198&apikey=453ca794
 /*
 Object sample 
 {

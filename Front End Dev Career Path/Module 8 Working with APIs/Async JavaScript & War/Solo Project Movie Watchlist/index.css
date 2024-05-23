@@ -100,7 +100,7 @@ div.initial-state {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 60vh;
+    height: 70vh;
     color: #787878;
     font-size: 1.125rem;
     font-weight: 800;
@@ -130,7 +130,7 @@ div.movie-container {
 
 .poster {
     margin-right: 1em;
-    height: 40%;
+    height: 80%;
 }
 
 .details1 {
@@ -209,13 +209,19 @@ a.to-search {
 
 /* Media querries */
 
-@media (min-width: 400px) {
+@media (max-width: 370px) {
+    
+    .movie-title {
+        font-size: 1rem;
+    }
+
     .poster {
-        height: 50%;
+        height: 70%;
     }
 }
 
 @media (min-width: 500px) {
+    
     div.title {
         flex-direction: row;
         justify-content: space-around;
@@ -232,5 +238,12 @@ a.to-search {
 
     .poster {
         height: 90%;
+    }
+}
+
+@media (min-width: 900px) {
+    
+    div.movie-container {
+        margin-left: 50px;
     }
 }

@@ -76,16 +76,18 @@ a.page-link{
     background-size: 1.25em;
     border: none;
     border-radius: 5px 0 0 5px;
+    caret-color: #A5A5A5;
+    color: #A5A5A5;
     padding: 0.5em;
     padding-left: 1.85em;
     line-height: 1.25em;
     width: 100%;
-    caret-color: #A5A5A5;
 }
 
 #search-btn {
     background: #4B4B4B;
     color: #fff;
+    cursor: pointer;
     border: none;
     border-radius: 0 5px 5px 0;
     font-size: 0.875em;
@@ -118,7 +120,7 @@ div.populated-results {
 }
 
 div.movie-container {
-    height: 200px;
+    height: 300px;
     align-items: center;
 }
 
@@ -128,7 +130,7 @@ div.movie-container {
 
 .poster {
     margin-right: 1em;
-    height: 90%;
+    height: 40%;
 }
 
 .details1 {
@@ -207,6 +209,12 @@ a.to-search {
 
 /* Media querries */
 
+@media (min-width: 400px) {
+    .poster {
+        height: 50%;
+    }
+}
+
 @media (min-width: 500px) {
     div.title {
         flex-direction: row;
@@ -220,5 +228,9 @@ a.to-search {
 
     .movie-container p {
         margin: 0.8em 0;
+    }
+
+    .poster {
+        height: 90%;
     }
 }

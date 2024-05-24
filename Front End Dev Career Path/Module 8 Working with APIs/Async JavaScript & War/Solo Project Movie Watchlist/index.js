@@ -4,7 +4,21 @@ const searchBtnEl = document.getElementById('search-btn')
 const searchInputEl = document.getElementById('search-input')
 const searchResultsEl = document.getElementById('search-results')
 const addToWatchlistEl = document.getElementsByClassName('.add-to-watchlist')
+const watchlistFromLS = JSON.parse(localStorage.getItem('watchlistArray'))
 const myWatchlistEl = document.getElementById('my-watchlist')
+let watchlistArray = []
+
+/* ----------------------------*/
+/* Check local storage on load */
+/* ----------------------------*/
+
+if (watchlistFromLS) {
+  watchlistArray = watchlistFromLS
+}
+
+/* -----------------------*/
+/* Search event listeners */
+/* -----------------------*/
 
 searchBtnEl.addEventListener('click', () => fetchResults())
 
@@ -14,10 +28,36 @@ searchInputEl.addEventListener('keypress', (e) => {
   }
 })
 
+/* -------------------*/
+/* Add event listener */
+/* -------------------*/
+
+document.addEventListener('click', (e) => {
+  if (e.target.dataset.add) {
+    addToLocalStorage(e.target.dataset.add)
+  }
+})
+
+/* ------------------------------*/
+/* Add to local storage function */
+/* -----------------------------*/
+
+function addToLocalStorage(movieId) {
+  if (!watchlistArray.includes(movieId)) {
+    watchlistArray.unshift(movieId)
+    localStorage.setItem("watchlistArray", JSON.stringify(watchlistArray))
+    document.getElementById(`${movieId}`).textContent = 'On Watchlist'
+    document.getElementById(`${movieId}`).setAttribute('disabled')
+  }
+}
+
+/* -----------------*/
+/* API search fetch */
+/* -----------------*/
+
 async function fetchResults() {
   const res = await fetch(`${baseUrl}?apikey=${apiKey}&s=${searchInputEl.value}`)
   const data = await res.json()
-  // add if statement to handle respnose of false
   if (data.Response !== 'False') {
     data.Search.forEach(async (movie) => {
       const res = await fetch(`${baseUrl}?apikey=${apiKey}&i=${movie.imdbID}&plot=short`)
@@ -34,7 +74,7 @@ async function fetchResults() {
               <div class="details2">
                 <p>${data.Runtime}</p>
                 <p>${data.Genre}</p>
-                <button type="button" id='${data.imdbID}' class="add-to-watchlist">
+                <button type="button" id="${data.imdbID}" data-add="${data.imdbID}" class="add-to-watchlist">
                 <i class="fa-solid fa-circle-plus" style="color: #ffffff"></i>Watchlist</button>
               </div>
               <div class="details3">
@@ -46,6 +86,7 @@ async function fetchResults() {
           <hr />
     `
       searchResultsEl.innerHTML += resultsHtml
+      alreadyAdded(data.imdbID)
     })
     searchResultsEl.innerHTML = ''
     searchResultsEl.classList.remove('initial-state')
@@ -60,7 +101,15 @@ async function fetchResults() {
   }
 }
 
-addToWatchlistEl.addEventListener(('click'), () => console.log('Clicked'))
+function alreadyAdded(movieId) {
+  const addedBtn = document.getElementById(`${movieId}`)
+  if (watchlistFromLS.includes(movieId)) {
+    addedBtn.textContent = 'On Watchlist'
+    addedBtn.setAttribute('disabled')
+  }
+}
+
+// addToWatchlistEl.addEventListener(('click'), () => console.log('Clicked'))
 /* 
 <div id="search-results" class="populated-results">
     <div class="movie-container">

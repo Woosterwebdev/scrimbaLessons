@@ -104,6 +104,7 @@ div.initial-state {
     color: #787878;
     font-size: 1.125rem;
     font-weight: 800;
+    text-align: center;
 }
 
 .fa-film {
@@ -117,6 +118,7 @@ div.populated-results {
     margin: 0 auto;
     margin-top: 3rem;
     width: 90%;
+    max-width: 700px;
 }
 
 div.movie-container {
@@ -153,10 +155,12 @@ div.movie-container {
 button.add-to-watchlist {
     background-color: inherit;
     color: inherit;
+    cursor: pointer;
     border: none;
 }
 
-.fa-circle-plus {
+.fa-circle-plus,
+.fa-circle-minus {
     margin-right: 0.3em;
 }
 
@@ -166,7 +170,7 @@ button.add-to-watchlist {
 }
 
 hr {
-    width: 95%;
+    width: 100%;
     background-color: #2C2C2C;
     border-color: #2C2C2C;
     color: #2C2C2C;
@@ -189,17 +193,6 @@ hr {
 }
 
 /* My Watchlist initial state */
-
-#my-watchlist {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 60vh;
-    color: #787878;
-    font-size: 1.125rem;
-    font-weight: 800;
-    text-align: center;
-}
 
 .empty-list {
     font-size: 1.125rem;
@@ -244,12 +237,5 @@ a.to-search {
 
     .poster {
         height: 90%;
-    }
-}
-
-@media (min-width: 900px) {
-    
-    div.movie-container {
-        margin-left: 50px;
     }
 }

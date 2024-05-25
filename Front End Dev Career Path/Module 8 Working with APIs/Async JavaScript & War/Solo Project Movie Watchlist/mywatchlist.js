@@ -1,4 +1,4 @@
-const baseUrl = 'http://www.omdbapi.com/'
+const baseUrl = 'https://www.omdbapi.com/'
 const apiKey = '453ca794'
 const watchlistFromLS = JSON.parse(localStorage.getItem('watchlistArray'))
 const myWatchlistEL = document.getElementById('my-watchlist')

@@ -51,13 +51,33 @@ function getCurrentTime() {
 
 setInterval(getCurrentTime, 1000)
 
+navigator.geolocation.getCurrentPosition(position => {
+    fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=imperial`)
+        .then(res => {
+            if (!res.ok) {
+                throw Error("Weather data not available")
+            }
+            return res.json()
+        })
+        .then(data => {
+            const iconUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+            document.getElementById('weather').innerHTML = `
+            <img src="${iconUrl}" />
+            `
+            // console.log(data.main.temp)
+        })
+        .catch(err => console.error(err))
+})
+
 /**
- * Challenge: Learn how to access the user's coordinates
- * by using the Geolocation Web API!
+ * Challenge: Display the weather icon as an <img />
+ * inside the <div id="weather">
  * 
- * Log the user's position to the console.
+ * This site shows an example URL for the icon:
+ * https://openweathermap.org/weather-conditions
+ * 
+ * Note: the weather icon is found instead data.weather, which is
+ * an array of weather for that area. You can just access the first
+ * item in that array to get the icon ID.
  */
 
-navigator.geolocation.getCurrentPosition(position => {
-    console.log(position)
-});

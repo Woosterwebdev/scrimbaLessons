@@ -52,12 +52,26 @@ function getCurrentTime() {
 setInterval(getCurrentTime, 1000)
 
 /**
- * Challenge: Learn how to access the user's coordinates
- * by using the Geolocation Web API!
+ * Challenge: Get the user's current weather for their area and 
+ * log it to the console
  * 
- * Log the user's position to the console.
+ * BaseURL: https://apis.scrimba.com/openweathermap/data/2.5/weather
+ * Queries to include: 
+ *     - lat (latitude)
+ *     - lon (longitude)
+ *     - units (imperial or metric)
  */
 
 navigator.geolocation.getCurrentPosition(position => {
-    console.log(position)
-});
+    fetch(`https://apis.scrimba.com/openweathermap/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=imperial`)
+        .then(res => {
+            if (!res.ok) {
+                throw Error("Weather data not available")
+            }
+            return res.json()
+        })
+        .then(data => {
+            console.log(data)
+        })
+        .catch(err => console.error(err))
+})

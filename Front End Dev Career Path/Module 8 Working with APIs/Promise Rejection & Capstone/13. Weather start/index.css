@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-}
+}    
 
 body {
     margin: 0;
@@ -11,11 +11,11 @@ body {
     background-size: cover;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
-    text-shadow: 0px 0px 20px #aaaaaa;
+    text-shadow: 0px 0px 20px #242424;
 }
 
 main {
-    padding: 0.9375rem;
+    padding: 15px;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -35,9 +35,15 @@ div#crypto {
     font-size: 1.3rem;
 }
 
+div#crypto p {
+    font-size: 0.75rem;
+    margin: 0;
+}
+
 div#crypto-top {
     display: flex;
     align-items: center;
+    margin-bottom: 0.25em;
 }
 
 div#crypto-top > span {

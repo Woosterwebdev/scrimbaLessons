@@ -32,14 +32,42 @@ fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
         return res.json()
     })
     .then(data => {
-        /**
-         * Challenge: Add the name and icon of the cryptocurrency
-         * to the upper-left of the dashboard page
-         * 
-         * Use `data.name` and `data.image.small` to access that info
-         */
-        document.getElementById('crypto-top').innerHTML = `
-        <img src="${data.image.small}" />
-        <span>${data.name}</span>`
+        document.getElementById("crypto-top").innerHTML = `
+            <img src=${data.image.small} />
+            <span>${data.name}</span>
+        `
+        document.getElementById('crypto').innerHTML += `
+            <p>Current: $${data.market_data.current_price.usd}</p>
+            <p>24hr H: $${data.market_data.high_24h.usd}</p>
+            <p>24hr L: $${data.market_data.low_24h.usd}</p>
+        `
     })
     .catch(err => console.error(err))
+
+/**
+ * Challenge: log the current time to the console, formatted
+ * like this:
+ * 
+ * 1:30 PM
+ * 
+ * Use Google and Stack Overflow to find the best way.
+ * 
+ * Good luck! 👍
+ */
+
+// const date = new Date().toLocaleTimeString("en-US", {timeStyle: "short"}) 
+// console.log(new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric'}))
+
+/**
+ * Challenges:
+ * 
+ * 1. Display the current time on the dashboard
+ * 2. Update the current time every second
+ */
+
+setInterval(getCurrentTime, 1000)
+
+function getCurrentTime() {
+    const date = new Date()
+    document.getElementById('time').textContent = date.toLocaleTimeString("en-us", {timeStyle: "short"})
+}

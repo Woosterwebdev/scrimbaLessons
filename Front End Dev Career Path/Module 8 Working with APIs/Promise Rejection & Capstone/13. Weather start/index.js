@@ -32,14 +32,32 @@ fetch("https://api.coingecko.com/api/v3/coins/dogecoin")
         return res.json()
     })
     .then(data => {
-        /**
-         * Challenge: Add the name and icon of the cryptocurrency
-         * to the upper-left of the dashboard page
-         * 
-         * Use `data.name` and `data.image.small` to access that info
-         */
-        document.getElementById('crypto-top').innerHTML = `
-        <img src="${data.image.small}" />
-        <span>${data.name}</span>`
+        document.getElementById("crypto-top").innerHTML = `
+            <img src=${data.image.small} />
+            <span>${data.name}</span>
+        `
+        document.getElementById('crypto').innerHTML += `
+            <p>Current: $${data.market_data.current_price.usd}</p>
+            <p>24hr H: $${data.market_data.high_24h.usd}</p>
+            <p>24hr L: $${data.market_data.low_24h.usd}</p>
+        `
     })
     .catch(err => console.error(err))
+
+function getCurrentTime() {
+    const date = new Date()
+    document.getElementById('time').textContent = date.toLocaleTimeString("en-us", {timeStyle: "short"})
+}
+
+setInterval(getCurrentTime, 1000)
+
+/**
+ * Challenge: Learn how to access the user's coordinates
+ * by using the Geolocation Web API!
+ * 
+ * Log the user's position to the console.
+ */
+
+navigator.geolocation.getCurrentPosition(position => {
+    console.log(position.coords.latitude, position.coords.longitude)
+})

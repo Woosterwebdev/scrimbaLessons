@@ -1,16 +1,3 @@
-// const photoAuthorInfo = document.getElementById('author-info')
-
-// getPhoto()
-
-// async function getPhoto() {
-//     const res = await fetch('https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature&count=1')
-//     const data = await res.json()
-//     console.log(data.urls.full)
-//     document.body.style.backgroundImage = `url(${data.urls.full})`
-//     photoAuthorInfo.textContent = `By: ${data.user.name}`
-
-// }
-
 fetch("https://apis.scrimba.com/unsplash/photos/random?orientation=landscape&query=nature")
     .then(res => res.json())
     .then(data => {
@@ -63,14 +50,9 @@ navigator.geolocation.getCurrentPosition(position => {
             const iconUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
             document.getElementById("weather").innerHTML = `
                 <img src=${iconUrl} />
-                <p>${Math.round(data.main.temp)}°</p>
-                <p>${data.name}</p>
+                <p class="weather-temp">${Math.round(data.main.temp)}º</p>
+                <p class="weather-city">${data.name}</p>
             `
         })
         .catch(err => console.error(err))
 })
-
-/**
- * Challenge: Display the temperature (rounded to the nearest degree)
- * and the city. Don't worry about the layout for now.
- */

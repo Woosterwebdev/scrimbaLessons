@@ -62,15 +62,12 @@ navigator.geolocation.getCurrentPosition(position => {
         .then(data => {
             const iconUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
             document.getElementById("weather").innerHTML = `
-                <img src=${iconUrl} />
-                <p>${Math.round(data.main.temp)}°</p>
-                <p>${data.name}</p>
+                <div>
+                    <img src=${iconUrl} />
+                    <p id="weather-temp">${Math.round(data.main.temp)}º</p>
+                </div>
+                <p class="weather-city">${data.name}</p>
             `
         })
         .catch(err => console.error(err))
 })
-
-/**
- * Challenge: Display the temperature (rounded to the nearest degree)
- * and the city. Don't worry about the layout for now.
- */

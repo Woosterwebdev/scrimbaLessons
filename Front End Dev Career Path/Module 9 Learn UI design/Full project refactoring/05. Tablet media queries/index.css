@@ -197,29 +197,45 @@ nav {
         padding: 1em;
         text-align: left;
     }
-    
     ul.data {
         display: flex;
         flex-wrap: wrap;
     }
-
     ul.data li {
         flex: 0 0 50%;
     }
-                
+    nav {
+        width: 50%;
+    }
 }
 
 @media (min-width: 550px) {
     ul.data {
         justify-content: center;
     }
-    
     .panel ul.data li {
         flex: 0 0 33%;
     }
-    
     .panel ul.data li p {
         margin-bottom: 0;
+    }
+    nav {
+        width: 45%;
+    }
+}
+
+@media (min-width: 720px) {
+    nav {
+        width: 35%;
+    }
+    div.columns {
+        display: flex;
+    }
+    div.col {
+        flex: 0 0 48%;
+    }
+    ul.secondary {
+        margin: 0 0 0 3em;
     }
 }
 

@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+body {
+    background: #000 url('redlight_dark.jpg');
+    background-size: cover;
+    color: #fff;
+    display: grid;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    text-shadow: 0 0 10px #343a40;
+}
+
+.container {
+    width: 50%;
+    margin-left: 4em;
+    height: 90vh;
+}
+
+h1 {
+    font-size: 3.1em;
+    margin-bottom: 0;
+}
+
+p{
+    font-size: 0.94em;
+    margin-top: .5em;
+    text-transform: uppercase;
+}
+
+span {
+    position: relative;
+}
+
+span::before {
+    position: absolute;
+    content: '';
+    height: .1em;
+    width: 90%;
+    bottom: .1em;
+    z-index: -1;
+    background: #d00000;
+}
+
+
+/*
+
+- White Space
+- Color 
+- Contrast 
+- Scale
+- Alignment
+- Typography
+- Visual Hierarchy
+fc8dd8
+*/

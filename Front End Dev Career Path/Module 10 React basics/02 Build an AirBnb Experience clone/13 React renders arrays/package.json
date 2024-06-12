@@ -1,6 +1,6 @@
 {
-  "name": "Scrim-s04lksbrel",
-  "description": "https://v2.scrimba.com/the-frontend-developer-career-path-c0j/~0r5",
+  "name": "Scrim-s0o9khpomh",
+  "description": "https://v2.scrimba.com/the-frontend-developer-career-path-c0j/~0rh",
   "scripts": {
     "watch": "webpack -w",
     "build": "webpack"

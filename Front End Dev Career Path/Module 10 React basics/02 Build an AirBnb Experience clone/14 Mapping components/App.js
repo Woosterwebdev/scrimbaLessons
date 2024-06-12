@@ -1,15 +1,23 @@
 import React from "react"
 import Joke from "./Joke"
+import jokesData from "./jokesData"
 
 /*
-Challenge: turn the strings in the array into <h3> elements instead
+Challenge: See if you can correctly pass the necessary props to the 
+Joke component in the .map() (and render the jokeElements array) so 
+the jokes show up on the page again
 */
 
 export default function App() {
-    const colors = [<h3>Red</h3>, <h3>Orange</h3>, <h3>Yellow</h3>, <h3>Green</h3>, <h3>Blue</h3>, <h3>Indigo</h3>, <h3>Violet</h3>]
+    const jokeElements = jokesData.map(joke => {
+        return <Joke
+            setup= {joke.setup}
+            punchline= {joke.punchline}
+        />
+    })
     return (
         <div>
-            {colors}
+            {jokeElements}
         </div>
     )
 }

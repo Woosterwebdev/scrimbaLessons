@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+}
+
+nav {
+    background: #F55A5A;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.nav--logo {
+    max-width: 24px;
+}
+
+.nav--title {
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+section {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.location--card {
+    display: flex;
+    gap: 15px;
+    height: 170px;
+}
+
+.location--information {
+    font-size: 0.64rem;
+    line-height: 0.77rem;
+    font-weight: 400;
+}
+
+.geo-location {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.location--title {
+    font-size: 1.56rem;
+    margin-top: 5px;
+}
+
+.location--dates {
+    font-weight: 700;
+}
+
+.location--description {
+    line-height: 0.96rem;
+}

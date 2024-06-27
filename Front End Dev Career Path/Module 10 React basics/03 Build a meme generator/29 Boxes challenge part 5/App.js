@@ -7,6 +7,21 @@ export default function App() {
     
     function toggle(id) {
         setSquares(prevSquares => {
+            /*setSquares(prevSquares => {
+                const newSquares = []
+                for (const currentSquare of prevSquares) {
+                    if (currentSquare.id === id) {
+                        const updatedSquare = {
+                            ...currentSquare,
+                            on: !currentSquare.on
+                        }
+                    newSquares.push(updatedSquare);
+                    } else {
+                    newSquares.push(currentSquare);
+                    }
+                }
+                return newSquares
+            })*/
             return prevSquares.map((square) => {
                 return square.id === id ? {...square, on: !square.on} : square
             })
@@ -15,10 +30,9 @@ export default function App() {
     
     const squareElements = squares.map(square => (
         <Box 
-            key={square.id} 
-            id={square.id}
+            key={square.id}
             on={square.on} 
-            toggle={toggle}
+            toggle={() => toggle(square.id)}
         />
     ))
     

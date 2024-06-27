@@ -9,7 +9,7 @@ export default function Box(props) {
         <button 
             style={styles} 
             className="box"
-            onClick={()=>props.toggle(props.id)}
+            onClick={props.toggle}
         >
         </button>
     )

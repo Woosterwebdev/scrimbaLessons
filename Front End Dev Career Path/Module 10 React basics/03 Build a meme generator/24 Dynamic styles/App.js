@@ -14,7 +14,7 @@ export default function App(props) {
     }
     
     const squareElements = squares.map(square => (
-        <div style={styles} className="box" key={square.id}></div>
+        <button style={styles} className="box" key={square.id}></button>
     ))
     return (
         <main>

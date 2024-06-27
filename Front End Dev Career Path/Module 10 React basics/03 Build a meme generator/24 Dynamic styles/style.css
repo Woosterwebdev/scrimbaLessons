@@ -9,4 +9,9 @@
     display: inline-block;
     margin-right: 4px;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+.box:active {
+    transform: none;
 }

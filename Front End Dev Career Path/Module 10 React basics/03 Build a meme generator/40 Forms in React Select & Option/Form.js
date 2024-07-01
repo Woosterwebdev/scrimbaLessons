@@ -11,8 +11,10 @@ export default function Form() {
             employment: ""
         }
     )
+    console.log(formData.employment)
     
     function handleChange(event) {
+        console.log(event)
         const {name, value, type, checked} = event.target
         setFormData(prevFormData => {
             return {
@@ -64,7 +66,6 @@ export default function Form() {
             
             <fieldset>
                 <legend>Current employment status</legend>
-                
                 <input 
                     type="radio"
                     id="unemployed"
@@ -97,8 +98,20 @@ export default function Form() {
                 />
                 <label htmlFor="full-time">Full-time</label>
                 <br />
-                
             </fieldset>
+            <br />
+            
+            <label htmlFor="favColor">What is your favorite color?</label>
+            <br />
+            <select id="favColor">
+                <option value="red">Red</option>
+                <option value="orange">Orange</option>
+                <option value="yellow">Yellow</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+                <option value="indigo">Indigo</option>
+                <option value="violet">Violet</option>
+            </select>
         </form>
     )
 }

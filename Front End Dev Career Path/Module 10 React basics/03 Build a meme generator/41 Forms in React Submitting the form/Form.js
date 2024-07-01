@@ -12,8 +12,7 @@ export default function Form() {
             favColor: ""
         }
     )
-    
-    const id = React.useId()
+    console.log(formData.favColor)
     
     function handleChange(event) {
         console.log(event)
@@ -26,47 +25,48 @@ export default function Form() {
         })
     }
     
+    function handleSubmit(e) {
+        e.preventDefault()
+        console.log(formData)
+    }
+
     return (
-        <form>
-            <label htmlFor={id + "-firstName"}>First Name</label>
+        <form onSubmit={handleSubmit}>
             <input
                 type="text"
+                placeholder="First Name"
                 onChange={handleChange}
                 name="firstName"
                 value={formData.firstName}
-                id={id + "-firstName"}
             />
-            <label htmlFor={id + "-lastName"}>Last Name</label>
             <input
                 type="text"
+                placeholder="Last Name"
                 onChange={handleChange}
                 name="lastName"
                 value={formData.lastName}
-                id={id + "-lastName"}
             />
-            <label htmlFor={id + "-email"}>Email</label>
             <input
                 type="email"
+                placeholder="Email"
                 onChange={handleChange}
                 name="email"
                 value={formData.email}
-                id={id + "-email"}
             />
-            <label htmlFor={id + "-comments"}>Comments</label>
             <textarea 
                 value={formData.comments}
+                placeholder="Comments"
                 onChange={handleChange}
                 name="comments"
-                id={id + "-comments"}
             />
             <input 
                 type="checkbox" 
-                id={id + "-isFriendly"} 
+                id="isFriendly" 
                 checked={formData.isFriendly}
                 onChange={handleChange}
                 name="isFriendly"
             />
-            <label htmlFor={id + "-isFriendly"}>Are you friendly?</label>
+            <label htmlFor="isFriendly">Are you friendly?</label>
             <br />
             <br />
             
@@ -74,48 +74,47 @@ export default function Form() {
                 <legend>Current employment status</legend>
                 <input 
                     type="radio"
-                    id={id + "-unemployed"}
+                    id="unemployed"
                     name="employment"
                     value="unemployed"
                     checked={formData.employment === "unemployed"}
                     onChange={handleChange}
                 />
-                <label htmlFor={id + "-unemployed"}>Unemployed</label>
+                <label htmlFor="unemployed">Unemployed</label>
                 <br />
                 
                 <input 
                     type="radio"
-                    id={id + "-part-time"}
+                    id="part-time"
                     name="employment"
                     value="part-time"
                     checked={formData.employment === "part-time"}
                     onChange={handleChange}
                 />
-                <label htmlFor={id + "-part-time"}>Part-time</label>
+                <label htmlFor="part-time">Part-time</label>
                 <br />
                 
                 <input 
                     type="radio"
-                    id={id + "-full-time"}
+                    id="full-time"
                     name="employment"
                     value="full-time"
                     checked={formData.employment === "full-time"}
                     onChange={handleChange}
                 />
-                <label htmlFor={id + "-full-time"}>Full-time</label>
+                <label htmlFor="full-time">Full-time</label>
                 <br />
             </fieldset>
             <br />
             
-            <label htmlFor={id + "-favColor"}>What is your favorite color?</label>
+            <label htmlFor="favColor">What is your favorite color?</label>
             <br />
             <select 
-                id={id + "-favColor"}
+                id="favColor" 
                 value={formData.favColor}
                 onChange={handleChange}
                 name="favColor"
             >
-                <option value="">-- Choose --</option>
                 <option value="red">Red</option>
                 <option value="orange">Orange</option>
                 <option value="yellow">Yellow</option>
@@ -124,6 +123,9 @@ export default function Form() {
                 <option value="indigo">Indigo</option>
                 <option value="violet">Violet</option>
             </select>
+            <br />
+            <br />
+            <button>Submit</button>
         </form>
     )
 }

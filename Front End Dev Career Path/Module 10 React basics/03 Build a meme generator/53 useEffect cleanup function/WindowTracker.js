@@ -16,7 +16,7 @@ export default function WindowTracker() {
             console.log("Cleaning up...")
             window.removeEventListener("resize", watchWidth)
         }
-    }, [])
+    }, []) //cleanup functions are not required but should be used when memory leaks exist.
     
     return (
         <h1>Window width: {windowWidth}</h1>

@@ -24,6 +24,10 @@ export default function App() {
         (notes[0] && notes[0].id) || ""
     )
     
+    React.useEffect(() => {
+        localStorage.setItem("localNotes", JSON.stringify(notes))
+    }, [notes])
+    
     function createNewNote() {
         const newNote = {
             id: nanoid(),
@@ -39,7 +43,6 @@ export default function App() {
                 ? { ...oldNote, body: text }
                 : oldNote
         }))
-        localStorage.setItem("localNotes", JSON.stringify(notes))
     }
     
     function findCurrentNote() {

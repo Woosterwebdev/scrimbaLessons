@@ -2,14 +2,11 @@ import React from "react"
 import Sidebar from "./components/Sidebar"
 import Editor from "./components/Editor"
 import Split from "react-split"
-import { nanoid } from "nanoid"
 import { onSnapshot, addDoc } from 'firebase/firestore'
 import { notesCollection } from "./firebase"
 
 export default function App() {
-    const [notes, setNotes] = React.useState(/*
-        () => JSON.parse(localStorage.getItem("notes")) || */[]  //local storage removed.
-    )
+    const [notes, setNotes] = React.useState([])
     const [currentNoteId, setCurrentNoteId] = React.useState(
         (notes[0]?.id) || ""
     )
@@ -20,9 +17,7 @@ export default function App() {
 
     React.useEffect(() => {
         const unsubscribe = onSnapshot(notesCollection, (snapshot) => {
-            //Sync up our local notes array with snapshot data
-            const notesArr = snapshot.docs.map(doc => ({ 
-                //mapping over each doc in snapshot and creating an id from doc.id
+            const notesArr = snapshot.docs.map(doc => ({
                 ...doc.data(),
                 id: doc.id
             }))
@@ -33,12 +28,9 @@ export default function App() {
 
     async function createNewNote() {
         const newNote = {
-            //id: nanoid(), firebase will make an id for us.
             body: "# Type your markdown note's title here"
         }
-        // setNotes(prevNotes => [newNote, ...prevNotes]) // replaced by addDoc
         const newNoteRef = await addDoc(notesCollection, newNote)
-        // setCurrentNoteId(newNote.id)
         setCurrentNoteId(newNoteRef.id)
     }
 
@@ -48,7 +40,6 @@ export default function App() {
             for (let i = 0; i < oldNotes.length; i++) {
                 const oldNote = oldNotes[i]
                 if (oldNote.id === currentNoteId) {
-                    // Put the most recently-modified note at the top
                     newArray.unshift({ ...oldNote, body: text })
                 } else {
                     newArray.push(oldNote)

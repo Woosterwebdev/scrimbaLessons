@@ -26,6 +26,8 @@ export default function App() {
      *    This may require a quick Google search.
      */
 
+    const sortedNotes = notes.sort((a, b) => b.updatedAt - a.updatedAt)
+
     React.useEffect(() => {
         const unsubscribe = onSnapshot(notesCollection, (snapshot) => {
             const notesArr = snapshot.docs.map(doc => ({
@@ -74,7 +76,7 @@ export default function App() {
                         className="split"
                     >
                         <Sidebar
-                            notes={notes}
+                            notes={sortedNotes}
                             currentNote={currentNote}
                             setCurrentNoteId={setCurrentNoteId}
                             newNote={createNewNote}

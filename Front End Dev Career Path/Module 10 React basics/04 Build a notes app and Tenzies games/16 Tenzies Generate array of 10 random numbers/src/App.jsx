@@ -11,6 +11,23 @@ import Die from "./Die"
  */
 
 export default function App() {
+  function allNewDice() {
+    let newDice = []
+    for (let i = 0; i < 10; i++){
+      newDice.push(Math.ceil(Math.random() * 6))
+    }
+    return newDice
+
+    // OR
+    // while(newDice.length < 10) {
+    //     const randomNum = Math.floor(Math.random() * 6) + 1
+    //     dice.push(randomNum)
+    // }
+    // return newDice
+  }
+
+  console.log(allNewDice)
+
   return (
     <main>
       <div className="dice-container">

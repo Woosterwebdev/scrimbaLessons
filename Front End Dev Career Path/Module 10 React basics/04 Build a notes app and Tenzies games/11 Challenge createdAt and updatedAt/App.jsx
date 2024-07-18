@@ -7,11 +7,24 @@ import { notesCollection, db } from "./firebase"
 
 export default function App() {
     const [notes, setNotes] = React.useState([])
-    const [currentNoteId, setCurrentNoteId] = React.useState("") //Udated state
+    const [currentNoteId, setCurrentNoteId] = React.useState("")
     
     const currentNote = 
         notes.find(note => note.id === currentNoteId) 
         || notes[0]
+
+    /**
+     * Challenge:
+     * 1. Add createdAt and updatedAt properties to the notes
+     *    When a note is first created, set the `createdAt` and `updatedAt`
+     *    properties to `Date.now()`. Whenever a note is modified, set the
+     *    `updatedAt` property to `Date.now()`.
+     * 
+     * 2. Create a new `sortedNotes` array (doesn't need to be saved 
+     *    in state) that orders the items in the array from 
+     *    most-recently-updated to least-recently-updated.
+     *    This may require a quick Google search.
+     */
 
     React.useEffect(() => {
         const unsubscribe = onSnapshot(notesCollection, (snapshot) => {
@@ -28,31 +41,21 @@ export default function App() {
         if (!currentNoteId) {
             setCurrentNoteId(notes[0]?.id)
         }
-    }, [notes]) //Added useEffect to handle getting a currentNoteId on load
+    }, [notes])
 
     async function createNewNote() {
         const newNote = {
-            body: "# Type your markdown note's title here"
+            body: "# Type your markdown note's title here",
+            createdAt: Date.now(),
+            updatedAt: Date.now()
         }
         const newNoteRef = await addDoc(notesCollection, newNote)
         setCurrentNoteId(newNoteRef.id)
     }
 
     async function updateNote(text) {
-        // setNotes(oldNotes => {
-        //     const newArray = []
-        //     for (let i = 0; i < oldNotes.length; i++) {
-        //         const oldNote = oldNotes[i]
-        //         if (oldNote.id === currentNoteId) {
-        //             newArray.unshift({ ...oldNote, body: text })
-        //         } else {
-        //             newArray.push(oldNote)
-        //         }
-        //     }
-        //     return newArray
-        // })
         const docRef = doc(db, "notes", currentNoteId)
-        await setDoc(docRef, { body: text }, { merge: true })
+        await setDoc(docRef, { body: text, updatedAt: Date.now() }, { merge: true })
     }
 
     async function deleteNote(noteId) {

@@ -51,6 +51,7 @@ main {
   color: #FFFFFF;
   font-size: 1.2rem;
   font-family: "Karla", sans-serif;
+  cursor: pointer;
 }
 
 .roll-dice:focus {

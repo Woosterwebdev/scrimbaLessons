@@ -6,34 +6,36 @@ export default function App() {
 
     const [dice, setDice] = React.useState(allNewDice())
     
+/**
+ * Challenge:
+ * 1. Add new state called `tenzies`, default to false. It
+ *    represents whether the user has won the game yet or not.
+ * 2. Add an effect that runs every time the `dice` state array 
+ *    changes. For now, just console.log("Dice state changed").
+ */
+
+    function generateNewDie() {
+        return {
+            value: Math.ceil(Math.random() * 6),
+            isHeld: false,
+            id: nanoid()
+        }
+    }
+    
     function allNewDice() {
         const newDice = []
         for (let i = 0; i < 10; i++) {
-            newDice.push({
-                value: Math.ceil(Math.random() * 6),
-                isHeld: false,
-                id: nanoid()
-            })
+            newDice.push(generateNewDie())
         }
         return newDice
     }
     
-/**
- * Challenge: Update the `rollDice` function to not just roll
- * all new dice, but instead to look through the existing dice
- * to NOT role any that are being `held`.
- * 
- * Hint: this will look relatively similiar to the `holdDice`
- * function below. When creating new dice, remember to use
- * `id: nanoid()` so any new dice have an `id` as well.
- */
+    
     function rollDice() {
-        setDice(prevDice => prevDice.map(die => {
-            return die.isHeld ? die : {
-                value: Math.ceil(Math.random() * 6),
-                isHeld: false,
-                id: nanoid()
-                }
+        setDice(oldDice => oldDice.map(die => {
+            return die.isHeld ? 
+                die :
+                generateNewDie()
         }))
     }
     
@@ -56,6 +58,8 @@ export default function App() {
     
     return (
         <main>
+            <h1 className="title">Tenzies</h1>
+            <p className="instructions">Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
             <div className="dice-container">
                 {diceElements}
             </div>

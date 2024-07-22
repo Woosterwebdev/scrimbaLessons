@@ -10,11 +10,9 @@ export default function App() {
     
     React.useEffect(() => {
         const allHeld = dice.every(die => die.isHeld)
-        const firstValue = dice[0].value
-        const allSameValue = dice.every(die => die.value === firstValue)
+        const allSameValue = dice.every(die => die.value === dice[0].value)
         if (allHeld && allSameValue) {
             setTenzies(true)
-            console.log("You won!")
         }
     }, [dice])
 
@@ -40,11 +38,16 @@ export default function App() {
  */
     
     function rollDice() {
+        if (!tenzies) {
         setDice(oldDice => oldDice.map(die => {
             return die.isHeld ? 
                 die :
                 generateNewDie()
         }))
+        } else {
+            setTenzies(false)
+            setDice(allNewDice())
+        }
     }
     
     function holdDice(id) {

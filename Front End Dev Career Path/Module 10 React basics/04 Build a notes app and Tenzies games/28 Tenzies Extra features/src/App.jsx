@@ -1,7 +1,7 @@
 /*
 Add extra feature such as 
     #1 Real dice images
-    #2 Track number of rolls
+    #2 Track number of rolls (complete)
     #3 Track time to win
     #4 Save best time / roll count to local storage
 */
@@ -15,6 +15,7 @@ export default function App() {
 
     const [dice, setDice] = React.useState(allNewDice())
     const [tenzies, setTenzies] = React.useState(false)
+    const [roll, setRoll] = React.useState(0)
     
     React.useEffect(() => {
         const allHeld = dice.every(die => die.isHeld)
@@ -42,6 +43,7 @@ export default function App() {
         
     function rollDice() {
         if (!tenzies) {
+        setRoll(prevRoll => prevRoll + 1)
         setDice(oldDice => oldDice.map(die => {
             return die.isHeld ? 
                 die :
@@ -85,6 +87,10 @@ export default function App() {
             >
                 {tenzies ? "New Game" : "Roll"}
             </button>
+            <div className="scores">
+                <h2 className="rolls">Rolls: {roll}</h2>
+                <h2 className="best">Best: </h2>
+            </div>
         </main>
     )
 }

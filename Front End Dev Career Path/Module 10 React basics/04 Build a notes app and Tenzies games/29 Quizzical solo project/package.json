@@ -1,0 +1,25 @@
+{
+  "name": "Quizzical",
+  "description": "React quiz project that uses Open Trivia API and Frigma design",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "17.0.2",
+    "react-confetti": "^6.1.0",
+    "react-dom": "^17.0.2",
+    "react-mde": "11.5.0",
+    "react-split": "2.0.13",
+    "showdown": "1.9.1",
+    "vite": "latest"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "*"
+  }
+}

@@ -2,8 +2,8 @@
 Add extra feature such as 
     #1 Real dice images
     #2 Track number of rolls (complete)
-    #3 Track time to win
-    #4 Save best time / roll count to local storage
+    #3 Track time to win (cancel)
+    #4 Save best roll count to local storage (completed)
 */
 
 import React from "react"
@@ -16,6 +16,9 @@ export default function App() {
     const [dice, setDice] = React.useState(allNewDice())
     const [tenzies, setTenzies] = React.useState(false)
     const [roll, setRoll] = React.useState(0)
+    const [best, setBest] = React.useState(
+        () => JSON.parse(localStorage.getItem("best")) || 0
+    )
     
     React.useEffect(() => {
         const allHeld = dice.every(die => die.isHeld)
@@ -24,6 +27,12 @@ export default function App() {
             setTenzies(true)
         }
     }, [dice])
+
+    React.useEffect(() => {
+        localStorage.setItem("best", JSON.stringify(best))
+    }, [best])
+
+    console.log(localStorage.getItem("best"))
 
     function generateNewDie() {
         return {
@@ -51,7 +60,11 @@ export default function App() {
         }))
         } else {
             setTenzies(false)
+            if (roll < best || best == 0) {
+                setBest(roll)
+            }
             setDice(allNewDice())
+            setRoll(0)
         }
     }
     
@@ -61,6 +74,10 @@ export default function App() {
                 {...die, isHeld: !die.isHeld} :
                 die
         }))
+    }
+
+    function clearBest() {
+        setBest("0")
     }
     
     const diceElements = dice.map(die => (
@@ -81,15 +98,23 @@ export default function App() {
             <div className="dice-container">
                 {diceElements}
             </div>
-            <button 
-                className="roll-dice" 
-                onClick={rollDice}
-            >
-                {tenzies ? "New Game" : "Roll"}
-            </button>
+            <div className="buttons">
+                <button 
+                    className="btn" 
+                    onClick={rollDice}
+                >
+                    {tenzies ? "New Game" : "Roll"}
+                </button>
+                <button
+                    className="btn"
+                    onClick={clearBest}
+                    >
+                        Rest Best
+                </button>
+            </div>
             <div className="scores">
                 <h2 className="rolls">Rolls: {roll}</h2>
-                <h2 className="best">Best: </h2>
+                <h2 className="best">Best: {best}</h2>
             </div>
         </main>
     )

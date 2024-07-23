@@ -1,11 +1,3 @@
-/*
-Add extra feature such as 
-    #1 Real dice images
-    #2 Track number of rolls (complete)
-    #3 Track time to win (cancel)
-    #4 Save best roll count to local storage (completed)
-*/
-
 import React from "react"
 import Die from "./Die"
 import {nanoid} from "nanoid"

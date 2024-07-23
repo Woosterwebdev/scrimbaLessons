@@ -10,7 +10,3 @@ export default function Die(props) {
         </div>
     )
 }
-/* 
-<img className="die-num" src={`../public/${props.value}.png`} />
-<h2 className="die-num">{props.value}</h2>
-*/

@@ -1,3 +1,10 @@
+# I have added the folloing features
+
+    -roll counter
+    -best score
+    -local storage for best score
+    -best score rest button
+
 # Getting Started
 
 Install the dependencies and run the project in watch mode

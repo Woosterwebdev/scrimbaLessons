@@ -34,6 +34,8 @@ main {
   text-align: center;
 }
 
+/* Dice Container and dice */
+
 .dice-container {
   display: grid;
   grid-template: auto auto / repeat(5, 1fr);
@@ -64,6 +66,8 @@ main {
   width: 100%;
 }
 
+/* Buttons */
+
 .btn {
   height: 50px;
   width: 150px;
@@ -83,6 +87,8 @@ main {
 .btn:active {
   box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
+
+/* Scores */
 
 .scores {
   display: flex;

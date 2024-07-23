@@ -24,8 +24,6 @@ export default function App() {
         localStorage.setItem("best", JSON.stringify(best))
     }, [best])
 
-    console.log(localStorage.getItem("best"))
-
     function generateNewDie() {
         return {
             value: Math.ceil(Math.random() * 6),

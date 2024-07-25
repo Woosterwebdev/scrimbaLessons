@@ -1,0 +1,55 @@
+/*Photo by <a href="https://unsplash.com/@dmjdenise?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Denise Jans</a> on <a href="https://unsplash.com/photos/a-close-up-of-a-reel-of-film-tV80374iytg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+  */
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  font-family: "Karla", sans-serif;
+  color: #293264;
+  background-image: url('/assets/film-reel.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/*--------*/
+/*-Start--*/
+/*--------*/
+
+.start {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.start--subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.start--btn {
+  background-color: #4D5B9E;
+  color: #F5F7FB;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+/*--------*/
+/*--Quiz--*/
+/*--------*/
+
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+}

@@ -33,7 +33,7 @@ body, html {
   font-weight: 400;
 }
 
-.start--btn {
+.btn {
   background-color: #4D5B9E;
   color: #F5F7FB;
   border: none;
@@ -48,8 +48,54 @@ body, html {
 .quiz-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 90%;
   height: 100vh;
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.question-container {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+legend {
+  margin-bottom: 15px;
+}
+
+.answer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-bottom: 15px;
+  gap: 1rem;
+}
+
+.answer {
+  border: 1px solid #4D5B9E;
+  border-radius: 7px;
+  font-size: 0.625rem;
+  font-weight: 500;
+  padding: 3px 9px;
+  background-color: #DFE1EC;
+  text-align: center;
+}
+
+input {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #8E95C7;
+  width: 100%;
+}
+
+.check {
+  margin-top: 15px;
 }

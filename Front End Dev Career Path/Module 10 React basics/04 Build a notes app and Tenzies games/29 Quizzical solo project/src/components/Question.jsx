@@ -24,7 +24,9 @@ export default function Question(props) {
         </div>
     )
 }
-/* <label className='answer'>Cabbage Patch Kids<input type='radio' name='answer'></input></label>
-<label className='answer'>Transformers<input type='radio' name='answer'></input></label>
-<label className='answer'>Care Bears<input type='radio' name='answer'></input></label>
-<label className='answer'>Rubik’s Cube<input type='radio' name='answer'></input></label> */
+
+
+// Needs ids for keys
+// Needs "selected" state and styling
+// Needs score state and Play again feature
+// Needs API fetch reinstated (temporarily commented out so as to not exceed API calls)

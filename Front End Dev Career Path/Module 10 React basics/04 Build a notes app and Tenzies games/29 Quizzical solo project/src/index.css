@@ -73,14 +73,14 @@ legend {
   gap: .5rem;
 }
 
-.answer {
-  background-color: #DFE1EC;
+.answer label {
+  background-color: transparent;
   color: #293264;
-  font-size: 0.625rem;
+  font-size: 0.75rem;
   font-weight: 500;
   border-radius: 7px;
   padding: 3px 9px;
-  border: 2px solid #4D5B9E;
+  border: 1px solid #4D5B9E;
   margin-bottom: 5px;
   cursor: pointer;
 }
@@ -93,7 +93,7 @@ input[type="radio"] {
 }
 
 input[type="radio"]:checked + label {
-  background: red;
+  background: #D6DBF5;
   color: #293264;
 }
 

@@ -1,5 +1,4 @@
 import React from 'react'
-import{ decode } from 'he'
 
 export default function Question(props) {
     let shuffleAnswers = props.answers.sort()
@@ -9,13 +8,16 @@ export default function Question(props) {
 
     let answers = shuffleAnswers.map(answer => {
         return(
-            <label className='answer'>{decode(answer)}<input type='radio' name='answer'></input></label>
+            <div className='answer'>
+                <input type='radio' name='answer' id={answer} value={answer}></input>
+                <label htmlFor={answer}>{answer}</label>
+            </div>
         )
     })
     return(
         <div className='question-container'>
             <form>
-                <legend>{decode(props.question)}</legend>
+                <legend>{props.question}</legend>
                 <div className='answer-container'>
                     {answers}
                 </div>

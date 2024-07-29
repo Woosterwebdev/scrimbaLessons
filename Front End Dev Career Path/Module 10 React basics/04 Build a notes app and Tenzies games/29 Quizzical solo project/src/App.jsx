@@ -65,22 +65,33 @@ export default function App() {
   const [start, setStart] = React.useState(false)
   const [quiz, setQuiz] = React.useState(data)
   const [correctAnswers, setCorrectAnswers] = React.useState([])
-
+  
   function startQuiz() {
     setStart(prevStart => !prevStart)
+  }
+  
+  console.log(quiz)
+
+  function createNewQuestion() {
+    return{
+      question: object.question,
+      correctAnswer: object.correct_answer,
+      incorrect_answers: [...object.incorrect_answers],
+      id: nanoid()
+    }
   }
 
   const questionElements = quiz.map(object => {
     let answers = [...object.incorrect_answers, object.correct_answer]
     return(
       <Question
-        key={object.id}
-        question={object.question}
-        answers={answers}
+      key={nanoid()}
+      question={object.question}
+      answers={answers}
       />
     )
   })
-    
+  
   if (start) {
     return(
       <Start
@@ -124,14 +135,15 @@ function startQuiz() {
       
       React.useEffect(() => {
         fetch('https://opentdb.com/api.php?amount=5&category=11&difficulty=easy')
-          .then(res => {
-                if(!res.ok) {
-                  throw Error("Something went wrong")
-                  }
-                res.json()
-              })
-          .then(data => setQuiz({...data.results), id: {nanoid}})
-      }, [start])
-
-
-*/
+        .then(res => {
+          if(!res.ok) {
+            throw Error("Something went wrong")
+            }
+            res.json()
+            })
+            .then(data => setQuiz({...data.results), id: {nanoid}})
+            }, [start])
+            
+const [formData, setFormData] = React.useState(selectedAnswer)
+            
+            */

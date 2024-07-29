@@ -70,23 +70,31 @@ legend {
   flex-wrap: wrap;
   width: 100%;
   padding-bottom: 15px;
-  gap: 1rem;
+  gap: .5rem;
 }
 
 .answer {
-  border: 1px solid #4D5B9E;
-  border-radius: 7px;
+  background-color: #DFE1EC;
+  color: #293264;
   font-size: 0.625rem;
   font-weight: 500;
+  border-radius: 7px;
   padding: 3px 9px;
-  background-color: #DFE1EC;
-  text-align: center;
+  border: 2px solid #4D5B9E;
+  margin-bottom: 5px;
+  cursor: pointer;
 }
 
-input {
-  position: fixed;
-  opacity: 0;
-  pointer-events: none;
+input[type="radio"] {
+  display: none;
+  position: absolute;
+  width: 100%;
+  appearance: none;
+}
+
+input[type="radio"]:checked + label {
+  background: red;
+  color: #293264;
 }
 
 hr {

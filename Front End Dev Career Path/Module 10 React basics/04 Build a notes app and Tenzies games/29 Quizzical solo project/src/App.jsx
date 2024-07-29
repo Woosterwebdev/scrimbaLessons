@@ -56,52 +56,16 @@
 //   }
 // ]
 import React from 'react'
-import { nanoid } from 'nanoid'
 import Start from './components/Start'
 import Quiz from './components/Quiz'
-import Question from './components/Question'
-import{ decode } from 'he'
 
 export default function App() {
-  const [start, setStart] = React.useState(true)
-  const [correctAnswers, setCorrectAnswers] = React.useState([])
-  const [quiz, setQuiz] = React.useState([])
-  const url = 'https://opentdb.com/api.php?amount=5&category=11&difficulty=easy'
-  
+  const [start, setStart] = React.useState(true)  
   
   function startQuiz() {
     setStart(prevStart => !prevStart)
   }
-  
-  React.useEffect(() => {
-    fetch(url)
-    .then(res => res.json())
-    .then(data => {
-      const quizData = data.results.map(question => {
-        return{
-          id: nanoid(),
-          correctAnswer: decode(question.correct_answer),
-          question: decode(question.question),
-          allAnswers: [...question.incorrect_answers, question.correct_answer],
-          selectedAnswer: ''
-        }
-      })
-      setQuiz(quizData)
-    })
-  }, [])
-  
-  const questionElements = quiz.map(object => {
-      return(
-          <Question
-          key={object.id}
-          question={object.question}
-          answers={object.allAnswers}
-          />
-        )
-      })
-
-  console.log(quiz)
-      
+        
   if (start) {
     return(
       <Start

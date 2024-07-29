@@ -1,4 +1,7 @@
 import React from 'react'
+import Question from './Question'
+import { nanoid } from 'nanoid'
+import { decode } from 'he'
 
 export default function Quiz() {
     const [correctAnswers, setCorrectAnswers] = React.useState([])
@@ -21,6 +24,8 @@ export default function Quiz() {
           setQuiz(quizData)
         })
     }, [])
+
+    console.log(quiz)
       
     const questionElements = quiz.map(object => {
         return(
@@ -37,7 +42,7 @@ export default function Quiz() {
             {questionElements}
             <button className='btn check'>Check Answers</button>
         </div>
-        )
+    )
 }
 // const questionElements = props.map(prop => {
 //     return(

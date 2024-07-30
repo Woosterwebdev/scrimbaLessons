@@ -3,8 +3,7 @@ import { nanoid } from 'nanoid'
 import { decode } from 'he'
 
 export default function Quiz() {
-    const [correctAnswers, setCorrectAnswers] = React.useState([])
-    const [formData, setFormData] = React.useState([])
+    const [formData, setFormData] = React.useState()
     const [quiz, setQuiz] = React.useState([])
     const url = 'https://opentdb.com/api.php?amount=5&category=11&difficulty=easy'
 
@@ -24,17 +23,31 @@ export default function Quiz() {
             }
           })
           setQuiz(quizData)
-          
         })
     }, [])
 
-    console.log(quiz.allAnswers)
-    
-    //Remove Question component and merge its code into Quiz component.
     //Add state to track form for changes.
     function handleChange(event){
-        console.log("change")
+        console.log(event.target)
+        // setFormData(prevFormData => {
+        //     const newAnswer = {
+        //         id: event.target.name,
+        //         selectedAnswer: event.target.value
+        //     }
+        //     if (prevFormData) {
+        //         return [
+        //             newAnswer, ...prevFormData
+        //         ]} else {
+        //         return [
+        //             {id: event.target.name,
+        //             selectedAnswer: event.target.value }
+        //         ]
+        //     }
+        //     console.log(prevFormData.id)
+        // })
     }
+
+    // console.log(formData)
     //Add check for correct answer.
     //Add state for score.
 
@@ -47,8 +60,8 @@ export default function Quiz() {
         let answers = sortAnswers.map(answer => {
             return(
                 <div className='answer'>
-                    <input type='radio' name='answer' id={object.id} value={answer} onChange={handleChange}></input>
-                    <label htmlFor={object.id}>{answer}</label>
+                    <input type='radio' name={object.id} id={answer} value={answer} onChange={handleChange}></input>
+                    <label htmlFor={answer}>{answer}</label>
                 </div>
             )
         })

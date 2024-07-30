@@ -3,7 +3,6 @@ import { nanoid } from 'nanoid'
 import { decode } from 'he'
 
 export default function Quiz() {
-    const [formData, setFormData] = React.useState()
     const [quiz, setQuiz] = React.useState([])
     const url = 'https://opentdb.com/api.php?amount=5&category=11&difficulty=easy'
 
@@ -18,7 +17,7 @@ export default function Quiz() {
               id: nanoid(),
               correctAnswer: decode(question.correct_answer),
               question: decode(question.question),
-              allAnswers: [...question.incorrect_answers, question.correct_answer],
+              allAnswers: [decode(...question.incorrect_answers), question.correct_answer],
               selectedAnswer: ''
             }
           })
@@ -26,25 +25,10 @@ export default function Quiz() {
         })
     }, [])
 
-    //Add state to track form for changes.
+    //Add selected answer to quiz.
     function handleChange(event){
         console.log(event.target)
-        // setFormData(prevFormData => {
-        //     const newAnswer = {
-        //         id: event.target.name,
-        //         selectedAnswer: event.target.value
-        //     }
-        //     if (prevFormData) {
-        //         return [
-        //             newAnswer, ...prevFormData
-        //         ]} else {
-        //         return [
-        //             {id: event.target.name,
-        //             selectedAnswer: event.target.value }
-        //         ]
-        //     }
-        //     console.log(prevFormData.id)
-        // })
+        
     }
 
     // console.log(formData)

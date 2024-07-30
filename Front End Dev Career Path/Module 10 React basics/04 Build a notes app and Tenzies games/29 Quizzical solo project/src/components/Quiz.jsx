@@ -4,6 +4,7 @@ import { decode } from 'he'
 
 export default function Quiz() {
     const [correctAnswers, setCorrectAnswers] = React.useState([])
+    const [formData, setFormData] = React.useState([])
     const [quiz, setQuiz] = React.useState([])
     const url = 'https://opentdb.com/api.php?amount=5&category=11&difficulty=easy'
 
@@ -23,6 +24,7 @@ export default function Quiz() {
             }
           })
           setQuiz(quizData)
+          
         })
     }, [])
 
@@ -30,20 +32,23 @@ export default function Quiz() {
     
     //Remove Question component and merge its code into Quiz component.
     //Add state to track form for changes.
+    function handleChange(event){
+        console.log("change")
+    }
     //Add check for correct answer.
     //Add state for score.
 
     const questionElements = quiz.map(object => {
-        let shuffleAnswers = object.allAnswers.sort()
-        if (shuffleAnswers.length < 3){
-            shuffleAnswers.sort().reverse()
+        let sortAnswers = object.allAnswers.sort()
+        if (sortAnswers.length < 3){
+            sortAnswers.sort().reverse()
         }
 
-        let answers = shuffleAnswers.map(answer => {
+        let answers = sortAnswers.map(answer => {
             return(
                 <div className='answer'>
-                    <input type='radio' name='answer' id={answer} value={answer}></input>
-                    <label htmlFor={answer}>{answer}</label>
+                    <input type='radio' name='answer' id={object.id} value={answer} onChange={handleChange}></input>
+                    <label htmlFor={object.id}>{answer}</label>
                 </div>
             )
         })

@@ -12,7 +12,7 @@ export default function App() {
   if (start) {
     return(
       <Start
-      startQuiz={() => startQuiz()}
+        startQuiz={() => startQuiz()}
       />
     )
   } else {

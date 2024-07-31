@@ -4,7 +4,7 @@ import { decode } from 'he'
 
 export default function Quiz() {
     const [quiz, setQuiz] = React.useState([])
-    const url = 'https://opentdb.com/api.php?amount=5&category=11&difficulty=easy'
+    const url = 'https://opentdb.com/api.php?amount=5&category=11&type=multiple'
 
 
     // API fetch request
@@ -17,13 +17,20 @@ export default function Quiz() {
                 id: nanoid(),
                 correctAnswer: decode(question.correct_answer),
                 question: decode(question.question),
-                allAnswers: [...question.incorrect_answers, question.correct_answer],
+                allAnswers: shuffleArray([
+                    ...question.incorrect_answers.map(decode),
+                    decode(question.correct_answer),
+                ]),
                 selectedAnswer: ''
             }
           })
           setQuiz(quizData)
         })
     }, [])
+
+    function shuffleArray(array) {
+        return array.sort(() => Math.random() - 0.5);
+    }
 
     //Add selected answer to quiz.
     function handleChange(event){
@@ -40,21 +47,23 @@ export default function Quiz() {
 
     const questionElements = quiz.map(object => {
         let sortAnswers = object.allAnswers.sort()
-        if (sortAnswers.length < 3){
-            sortAnswers.sort().reverse()
-        }
-
-        let answers = sortAnswers.map(answer => {
+        let answers = sortAnswers.map((answer, index) => {
             return(
-                <div className='answer'>
-                    <input type='radio' name={object.id} id={answer} value={answer} onChange={handleChange}></input>
+                <div className='answer' key={answer + index}>
+                    <input 
+                        type='radio' 
+                        name={object.id} 
+                        id={answer} 
+                        value={answer} 
+                        onChange={handleChange}
+                        ></input>
                     <label htmlFor={answer}>{answer}</label>
                 </div>
             )
         })
         
         return(
-            <div className='question-container'>
+            <div className='question-container' key={object.id}>
                 <form>
                     <legend>{object.question}</legend>
                     <div className='answer-container'>

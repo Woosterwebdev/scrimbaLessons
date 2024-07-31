@@ -4,8 +4,8 @@ import { decode } from 'he'
 
 export default function Quiz() {
     const [quiz, setQuiz] = React.useState([])
+    const [score, setScore] = React.useState(0)
     const url = 'https://opentdb.com/api.php?amount=5&category=11&type=multiple'
-
 
     // API fetch request
     React.useEffect(() => {
@@ -15,8 +15,9 @@ export default function Quiz() {
           const quizData = data.results.map(question => {
             return{
                 id: nanoid(),
-                correctAnswer: decode(question.correct_answer),
                 question: decode(question.question),
+                correctAnswer: decode(question.correct_answer),
+                incorrect_answers: [...question.incorrect_answers.map(decode)],
                 allAnswers: shuffleArray([
                     ...question.incorrect_answers.map(decode),
                     decode(question.correct_answer),
@@ -41,9 +42,27 @@ export default function Quiz() {
         }))
     }
     
-    console.log(quiz)
     //Add check for correct answer.
     //Add state for score.
+    function checkAnswers(e) {
+        e.preventDefault()
+        quiz.map(question => {
+            question.allAnswers.map(answer => {
+                if (answer !== question.correctAnswer) {
+                    {document.getElementById(`${answer}`).classList.add('opacity')}
+                }
+            })
+            if (question.correctAnswer === question.selectedAnswer) {
+                {document.getElementById(`${question.selectedAnswer}`).classList.add('correct')}
+                setScore(prevScore => prevScore + 1)
+            } else {
+                {document.getElementById(`${question.selectedAnswer}`).classList.add('incorrect')}
+                {document.getElementById(`${question.correctAnswer}`).classList.add('correct')}
+            }
+        })
+    }
+
+    console.log(score)
 
     const questionElements = quiz.map(object => {
         let sortAnswers = object.allAnswers.sort()
@@ -64,22 +83,20 @@ export default function Quiz() {
         
         return(
             <div className='question-container' key={object.id}>
-                <form>
-                    <legend>{object.question}</legend>
-                    <div className='answer-container'>
-                        {answers}
-                    </div>
-                </form>
+                <legend>{object.question}</legend>
+                <div className='answer-container'>
+                    {answers}
+                </div>
                 <hr />
             </div>
         )
     })
     
     return(
-        <div className='quiz-container'>
+        <form className='quiz-container'>
             {questionElements}
-            <button className='btn check'>Check Answers</button>
-        </div>
+            <button className='btn' onClick={checkAnswers}>Check Answers</button>
+        </form>
     )
 }
 

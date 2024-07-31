@@ -14,11 +14,11 @@ export default function Quiz() {
         .then(data => {
           const quizData = data.results.map(question => {
             return{
-              id: nanoid(),
-              correctAnswer: decode(question.correct_answer),
-              question: decode(question.question),
-              allAnswers: [decode(...question.incorrect_answers), question.correct_answer],
-              selectedAnswer: ''
+                id: nanoid(),
+                correctAnswer: decode(question.correct_answer),
+                question: decode(question.question),
+                allAnswers: [...question.incorrect_answers, question.correct_answer],
+                selectedAnswer: ''
             }
           })
           setQuiz(quizData)
@@ -27,11 +27,14 @@ export default function Quiz() {
 
     //Add selected answer to quiz.
     function handleChange(event){
-        console.log(event.target)
-        
+        setQuiz(prevQuiz => prevQuiz.map(question => {
+          return question.id === event.target.name ? 
+            {...question, selectedAnswer: event.target.value} : 
+            question     
+        }))
     }
-
-    // console.log(formData)
+    
+    console.log(quiz)
     //Add check for correct answer.
     //Add state for score.
 

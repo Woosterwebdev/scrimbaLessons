@@ -14,8 +14,9 @@ import ReactDOM from 'react-dom/client';
 function App() {
   return (
     <main>
-      {/* Your custom Button component here */}
-      <button>Click here</button>
+      <Button 
+        text="Click here"
+      />
     </main>
   )
 }

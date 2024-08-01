@@ -60,6 +60,9 @@ body, html {
 .question-container {
   width: 100%;
   margin-bottom: 10px;
+  background: #F5F7FB;
+  border-radius: 6px;
+  padding: 6px;
 }
 
 legend {
@@ -70,7 +73,7 @@ legend {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  padding-bottom: 15px;
+  padding-bottom: 10px;
   gap: .5rem;
 }
 
@@ -121,4 +124,12 @@ hr {
 .correct + label {
   background: #94D7A2;
   border: none;
+}
+
+.score {
+  font-size: 1rem;
+  font-weight: 700;
+  background: #F5F7FB;
+  border-radius: 6px;
+  padding: 6px;
 }

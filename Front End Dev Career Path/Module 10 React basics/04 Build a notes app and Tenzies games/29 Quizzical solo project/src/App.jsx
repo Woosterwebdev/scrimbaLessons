@@ -8,6 +8,10 @@ export default function App() {
   function startQuiz() {
     setStart(prevStart => !prevStart)
   }
+
+  function resetGame() {
+    setStart(true)
+  }
         
   if (start) {
     return(
@@ -17,48 +21,9 @@ export default function App() {
     )
   } else {
     return(
-      <Quiz />
+      <Quiz
+        resetGame={() => resetGame()}
+      />
     )
   }  
 }
-/*
-
-
-const [start, setStart] = React.useState(true)
-
-function startQuiz() {
-  setStart(prevStart => !prevStart)
-  }
-  
-  if (start) {
-    return(
-      <Start
-      startQuiz={() => startQuiz()}
-      />
-      )
-      } else {
-        return(
-      <Quiz />
-      )
-      }
-      
-      question={data.question}
-      correctAnswer={data.correct_answer}
-      incorrectAnswers={data.incorrect_answers}
-      
-      
-      
-      React.useEffect(() => {
-        fetch('https://opentdb.com/api.php?amount=5&category=11&difficulty=easy')
-        .then(res => {
-          if(!res.ok) {
-            throw Error("Something went wrong")
-            }
-            res.json()
-            })
-            .then(data => setQuiz({...data.results), id: {nanoid}})
-            }, [start])
-            
-const [formData, setFormData] = React.useState(selectedAnswer)
-            
-            */

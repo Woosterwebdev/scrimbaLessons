@@ -2,12 +2,12 @@ import React from 'react'
 import { nanoid } from 'nanoid'
 import { decode } from 'he'
 
-export default function Quiz() {
+export default function Quiz(props) {
     const [quiz, setQuiz] = React.useState([])
     const [score, setScore] = React.useState(0)
+    const [complete, setComplete] = React.useState(false)
     const url = 'https://opentdb.com/api.php?amount=5&category=11&type=multiple'
 
-    // API fetch request
     React.useEffect(() => {
         fetch(url)
         .then(res => res.json())
@@ -33,7 +33,6 @@ export default function Quiz() {
         return array.sort(() => Math.random() - 0.5);
     }
 
-    //Add selected answer to quiz.
     function handleChange(event){
         setQuiz(prevQuiz => prevQuiz.map(question => {
           return question.id === event.target.name ? 
@@ -41,9 +40,7 @@ export default function Quiz() {
             question     
         }))
     }
-    
-    //Add check for correct answer.
-    //Add state for score.
+
     function checkAnswers(e) {
         e.preventDefault()
         quiz.map(question => {
@@ -60,9 +57,8 @@ export default function Quiz() {
                 {document.getElementById(`${question.correctAnswer}`).classList.add('correct')}
             }
         })
+        setComplete(true)
     }
-
-    console.log(score)
 
     const questionElements = quiz.map(object => {
         let sortAnswers = object.allAnswers.sort()
@@ -87,7 +83,6 @@ export default function Quiz() {
                 <div className='answer-container'>
                     {answers}
                 </div>
-                <hr />
             </div>
         )
     })
@@ -95,48 +90,8 @@ export default function Quiz() {
     return(
         <form className='quiz-container'>
             {questionElements}
-            <button className='btn' onClick={checkAnswers}>Check Answers</button>
+            <button className='btn' onClick={complete ? props.resetGame : checkAnswers}>{complete ? "Play again" : "Check Answers"}</button>
+            {complete ? <p className='score'>You scored {score}/5 correct answers</p> : <p></p>}
         </form>
     )
 }
-
-
-
-
-/* All old code from previous structure */
-
-// const questionElements = props.map(prop => {
-    //     return(
-        //         <div className='question-container'>
-        //             <form>
-        //                 <legend>{prop.question}</legend>
-        //                 <div className='answer-container'>
-        //                     <label className='answer'>Cabbage Patch Kids<input type='radio' name='answer'></input></label>
-        //                     <label className='answer'>Transformers<input type='radio' name='answer'></input></label>
-        //                     <label className='answer'>Care Bears<input type='radio' name='answer'></input></label>
-        //                     <label className='answer'>Rubik’s Cube<input type='radio' name='answer'></input></label>
-        //                 </div>
-        //             </form>
-        //             <hr />
-        //         </div>
-        //     )
-        // })
-
-        
-        // return(
-            //     <div className='quiz-container'>
-            //         {questionElements}
-            //         <button className='btn check'>Check Answers</button>
-            //     </div>
-            
-            // )
-
-
-
-            // return(
-            //     <Question
-            //         key={object.id}
-            //         question={object.question}
-            //         answers={object.allAnswers}
-            //     />
-            // )

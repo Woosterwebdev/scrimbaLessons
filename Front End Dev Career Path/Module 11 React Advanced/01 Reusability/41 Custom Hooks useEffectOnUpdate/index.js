@@ -7,7 +7,7 @@ import Toggle from "./components/Toggle/index"
 function App() {
   return (
     <>
-      <Toggle>
+      <Toggle onToggle={() => {console.log("Toggled")}}>
         <Toggle.Button>
           <Toggle.Display>
             {(on) => {

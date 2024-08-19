@@ -39,7 +39,7 @@ function App() {
           <Toggle.Display>
             {(on) => {
               return (
-                <div className={on ? "box filled" : "box"}></div>
+                <div className={`box ${on ? "filled" : ""}`}></div>
               )
             }}
           </Toggle.Display>

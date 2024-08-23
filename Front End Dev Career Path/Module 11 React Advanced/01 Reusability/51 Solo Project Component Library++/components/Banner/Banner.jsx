@@ -1,9 +1,21 @@
 import React from "react"
+import classnames from "classnames"
 
-export default function Banner({ children, style, variant }) {
+const BannerContext = React.createContext()
+export { BannerContext }
+
+export default function Banner({ children , variant }) {
+    let styleClass = "banner"
+    let variantClass = variant ? `${variant}` : ""
+    const allClasses = classnames(styleClass, variantClass)
     return(
-        <div className="banner">
-            {children}
-        </div>
+        <BannerContext.Provider value={{ variant }}>
+            <div className={allClasses}>
+                <img className="banner-icon" src={`./public/${variant}.png`} />
+                <div className="banner-children">
+                    {children}
+                </div>
+            </div>
+        </BannerContext.Provider>
     )
 }

@@ -140,7 +140,28 @@ button.button-danger {
 .banner {
     border-radius: 6px;
     padding: 16px;
+    display: flex;
     gap: 12px;
+}
+
+.banner-children {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.banner-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.banner-title {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.banner-content {
+    font-size: 0.875rem;
 }
 
 .danger {
@@ -156,6 +177,38 @@ button.button-danger {
 .success {
     background: #D1FAE5;
     color: #065F46;
+}
+
+banner-title-success {
+    color: #065F46;
+}
+
+banner-content-success {
+    color: #047857;
+}
+
+banner-title-warning {
+    color: #92400E;
+}
+
+banner-content-warning {
+    color: #B45309;
+}
+
+banner-title-danger {
+    color: #92400E;
+}
+
+banner-content-danger {
+    color: #B45309;
+}
+
+banner-title-primary {
+    color: #1E40AF;
+}
+
+banner-content-primary {
+    color: #1C51B9;
 }
 
 .primary {
@@ -176,4 +229,33 @@ button.button-danger {
 .pink {
     background: #FCE7F3;
     color: #9D174D;
+}
+
+.card-container {
+    background: #F9FAFB;
+    padding: 0px, 24px, 32px, 24px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+card-icon-container {
+    background: #3F75FE;
+    border-radius: 6px;
+    width: 48px;
+    height: 48px;
+}
+
+card-icon {
+    background: #3F75FE;
+    border-radius: 6px;
+    width: 48px;
+    height: 48px;
+    padding: 12px;
 }

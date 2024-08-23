@@ -281,6 +281,43 @@ banner-content-primary {
     font-size: 1rem;
 }
 
+.testimonial-with-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #2545B8;
+    color: #FFFFFF;
+    margin-top: 103px;
+    position: relative;
+}
+
+.testimonial-image {
+    position: absolute;
+    top: -103px;
+    width: 334px;
+    height: 206px;
+    object-fit: cover;
+    object-position: 75% 25%;
+    border-radius: 6px;
+    box-shadow: 0px 20px 25px -5px #0000001A;
+}
+
+.testimonial-quote-container {
+    padding: 0 20px 0px 20px;
+    margin-top: 203px;
+    font-size: 1.5rem;
+}
+
+.testimonial-author {
+    font-size: 1rem;
+}
+
+.testimonial-author p {
+    margin: 0;
+}
+
+
+
 @media (min-width: 550px) {
     .card-section {
         display: flex;

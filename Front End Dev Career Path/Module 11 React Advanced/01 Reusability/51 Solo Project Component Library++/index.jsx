@@ -5,19 +5,17 @@ import Star from "./components/Star"
 import Badge from "./components/Badge/Badge"
 import Banner from "./components/Banner/index"
 import Card from "./components/Card/index"
-import Testimonial from "./components/Testimonial/index"
+import TestimonialWithImg from "./components/TestimonialWithImg/index"
 
 function App() {
   return (
-    <Testimonial>
-      <Testimonial.Image><img src="./public/mayAndersons.png" /></Testimonial.Image>
-      <Testimonial.Logo><img src="./public/quote.png" /></Testimonial.Logo>
-      <Testimonial.Quote>
+    <TestimonialWithImg>
+      <TestimonialWithImg.Image img="mayAndersons" />
+      <TestimonialWithImg.Quote>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed urna nulla vitae laoreet augue. Amet feugiat est integer dolor auctor adipiscing nunc urna, sit. 
-      </Testimonial.Quote>
-      <Testimonial.Author>May Andersons</Testimonial.Author>
-      <Testimonial.Role>Workcation, CTO</Testimonial.Role>
-    </Testimonial>
+      </TestimonialWithImg.Quote>
+      <TestimonialWithImg.Author author="May Andersons" role="Workcation, CTO" />
+    </TestimonialWithImg>
   )
 }
 
@@ -25,6 +23,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(<App />);
 
 
 /*
+      <Testimonial.Logo logo="logo" />
     <Badge style="square" variant="">Badge</Badge>
     ***
     <Banner style="" variant="primary">

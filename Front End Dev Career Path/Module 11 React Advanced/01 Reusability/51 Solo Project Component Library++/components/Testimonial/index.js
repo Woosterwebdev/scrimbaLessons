@@ -1,4 +1,4 @@
-import Testimonial from "./Testimonial"
+import LogoTestimonial from "./LogoTestimonial"
 import TestimonialImage from "./TestimonialImage"
 import TestimonialLogo from "./TestimonialLogo"
 import TestimonialQuote from "./TestimonialQuote"
@@ -11,4 +11,5 @@ Testimonial.Quote = TestimonialQuote
 Testimonial.Author = TestimonialAuthor
 Testimonial.Role = TestimonialRole
 
-export default Testimonial
+export LogoTestimonial
+export ImgTestimonial

@@ -1,6 +1,6 @@
 import React from "react"
 
-export default function TestimonialAuthor({ author, role }) {
+export default function TestimonialWithImgAuthor({ author, role }) {
     return(
         <div className="testimonial-author">
             <p>{author}</p>

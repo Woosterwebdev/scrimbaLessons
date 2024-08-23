@@ -5,8 +5,8 @@ export default function BannerContent({ children }) {
     const { variant } = React.useContext(BannerContext)
     let variantClass = variant ? `banner-content banner-content-${variant}` : ""
     return (
-        <div className={variantClass}>
+        <p className={variantClass}>
             {children}
-        </div>
+        </p>
     )
 }

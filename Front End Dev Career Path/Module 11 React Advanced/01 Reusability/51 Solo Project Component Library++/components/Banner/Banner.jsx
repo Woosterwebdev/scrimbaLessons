@@ -12,10 +12,14 @@ export default function Banner({ children , variant }) {
         <BannerContext.Provider value={{ variant }}>
             <div className={allClasses}>
                 <img className="banner-icon" src={`./public/${variant}.png`} />
-                <div className="banner-children">
+                <div>
                     {children}
                 </div>
             </div>
         </BannerContext.Provider>
     )
 }
+
+/*
+ className="banner-children"
+*/

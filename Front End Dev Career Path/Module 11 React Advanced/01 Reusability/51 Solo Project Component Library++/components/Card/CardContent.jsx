@@ -2,8 +2,8 @@ import React from "react"
 
 export default function CardContent({ children }) {
     return(
-        <div className="card-content">
+        <p className="card-content">
             {children}
-        </div>
+        </p>
     )
 }

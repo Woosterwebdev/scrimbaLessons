@@ -5,8 +5,8 @@ export default function BannerTitle({ children }) {
     const { variant } = React.useContext(BannerContext)
     let variantClass = variant ? `banner-title banner-title-${variant}` : ""
     return (
-        <div className={variantClass}>
+        <h3 className={variantClass}>
             {children}
-        </div>
+        </h3>
     )
 }

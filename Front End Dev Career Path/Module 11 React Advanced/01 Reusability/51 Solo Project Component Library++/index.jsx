@@ -9,8 +9,7 @@ import TestimonialWithImg from "./components/TestimonialWithImg/index"
 
 function App() {
   return (
-    <TestimonialWithImg>
-      <TestimonialWithImg.Image img="mayAndersons" />
+    <TestimonialWithImg imgSrc="mayAndersons">
       <TestimonialWithImg.Quote>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed urna nulla vitae laoreet augue. Amet feugiat est integer dolor auctor adipiscing nunc urna, sit. 
       </TestimonialWithImg.Quote>

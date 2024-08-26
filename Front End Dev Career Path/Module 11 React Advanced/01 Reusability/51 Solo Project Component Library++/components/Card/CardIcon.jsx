@@ -1,9 +1,9 @@
 import React from "react"
 
-export default function CardIcon({ children }) {
+export default function CardIcon({ cardIcon }) {
     return(
         <header className="card-icon-container">
-                { children }
+                <img className="card-icon" src={`./public/${cardIcon}.png`} />
         </header>
     )
 }

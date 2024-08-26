@@ -70,6 +70,83 @@ function App() {
       </section>
       <section>
         <h2>Cards</h2>
+          <div className="card-section">
+            <Card>
+              <Card.Icon cardIcon="cloudUpload" />
+              <Card.Title>Easy Deployment</Card.Title>
+              <Card.Content>Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.</Card.Content>
+            </Card>
+            <Card>
+              <Card.Icon cardIcon="cloudUpload" />
+              <Card.Title>Easy Deployment</Card.Title>
+              <Card.Content>Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.</Card.Content>
+            </Card>
+            <Card>
+              <Card.Icon cardIcon="cloudUpload" />
+              <Card.Title>Easy Deployment</Card.Title>
+              <Card.Content>Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.</Card.Content>
+            </Card>
+          </div>
+          <h3>Syntax</h3>
+            <div className="syntax">
+              <p><code>{`<Card>`}</code></p>
+              <p><code>{`<Card.Icon><img className="card-icon" src="./public/cloudUpload.png" /></Card.Icon>`}</code></p>
+              <p><code>{`<Card.Title>Easy Deployment</Card.Title>`}</code></p>
+              <p><code>{`<Card.Content>Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.</Card.Content>`}</code></p>
+              <p><code>{`</Card>`}</code></p>
+            </div>
+      </section>
+      <section>
+        <h2>Testimonial with image</h2>
+        <div className="testimonial-with-img-container">
+          <TestimonialWithImg imgSrc="mayAndersons">
+            <TestimonialWithImg.Quote>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed urna nulla vitae laoreet augue. Amet feugiat est integer dolor auctor adipiscing nunc urna, sit. 
+            </TestimonialWithImg.Quote>
+            <TestimonialWithImg.Author author="May Andersons" role="Workcation, CTO" />
+          </TestimonialWithImg>
+        </div>
+        <h3>Syntax</h3>
+          <div className="syntax">
+            <p><code>{`<TestimonialWithImg imgSrc="mayAndersons">`}</code></p>
+            <p><code>{`<TestimonialWithImg.Quote>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed urna nulla vitae laoreet augue. Amet feugiat est integer dolor auctor adipiscing nunc urna, sit. 
+            </TestimonialWithImg.Quote>`}</code></p>
+            <p><code>{`<TestimonialWithImg.Author author="May Andersons" role="Workcation, CTO" />`}</code></p>
+            <p><code>{`</TestimonialWithImg>`}</code></p>
+          </div>
+      </section>
+      <section>
+        <h2>Testimonial with logo</h2>
+        <div>
+          <Testimonial logo="logo">
+            <Testimonial.Quote>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed urna nulla vitae laoreet augue. Amet feugiat est integer dolor auctor adipiscing nunc urna, sit. 
+            </Testimonial.Quote>
+            <Testimonial.Author author="May Andersons" role="Workcation, CTO" />
+          </Testimonial>
+        </div>
+        <h3>Syntax</h3>
+        <div className="syntax">
+          <p><code>{`<Testimonial logo="logo">`}</code></p>
+          <p><code>{`<Testimonial.Quote>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed urna nulla vitae laoreet augue. Amet feugiat est integer dolor auctor adipiscing nunc urna, sit. 
+              </Testimonial.Quote>`}</code></p>
+          <p><code>{`<Testimonial.Author author="May Andersons" role="Workcation, CTO" />`}</code></p>
+          <p><code>{`</Testimonial>`}</code></p>
+        </div>
+      </section>
+      <section>
+        <h2>Menu</h2>
+        <div></div>
+        <h3>Syntax</h3>
+        <div className="syntax"></div>
+      </section>
+      <section>
+        <h2>Button</h2>
+        <div></div>
+        <h3>Syntax</h3>
+        <div className="syntax"></div>
       </section>
       <footer>
         <p>&copy; 2024</p>

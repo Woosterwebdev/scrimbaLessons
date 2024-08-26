@@ -336,7 +336,8 @@ banner-content-primary {
     flex-direction: column;
     background: #2545B8;
     color: #FFFFFF;
-    margin-top: 103px;
+    margin-top: 123px;
+    margin-bottom: 30px;
     overflow: visible;
 }
 
@@ -373,6 +374,7 @@ banner-content-primary {
     flex-direction: column;
     padding: 20px 15px;
     height: auto;
+    margin: 20px 0;
 }
 
 .testimonial-logo {
@@ -437,6 +439,8 @@ banner-content-primary {
         justify-content: space-around;
         align-items: center;
         height: 400px;
+        margin: 50px 0;
+        
     }
     
     .testimonial-image {

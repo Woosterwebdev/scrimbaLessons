@@ -3,14 +3,14 @@
 }
 
 body {
-    height: 100vh;
     margin: 0;
-    /* padding: 10px; */
-    /* display: flex; */
-    /* justify-content: center; */
     font-family: Inter;
     background: #D4D4D4;
 }
+
+/*-------------*/
+/* Docs styles */
+/*-------------*/
 
 section {
     max-width: 800px;
@@ -21,6 +21,7 @@ section {
 h3 {
     font-weight: 400;
 }
+
 
 .m-0 {
     margin: 0;
@@ -50,15 +51,26 @@ h3 {
     max-height: 100%;
 }
 
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #C9C9C9;
+    height: 40px;
+    gap: 10px;
+    box-shadow: 0px -1px 2px #A1A1A1;
+    margin-top: 20px;
+}
+
+/*------------------*/
+/* Component styles */
+/*------------------*/
+
 .badge-examples {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
-
-/* .banner-examples {
-    gap: 5px;
-} */
 
 .star {
     height: 30px;
@@ -388,7 +400,7 @@ banner-content-primary {
 
 .testimonial-author {
     font-size: 1rem;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
 }
 
 .testimonial-author p {
@@ -402,6 +414,7 @@ banner-content-primary {
 .testimonial-role {
     color: #6B7280;
 }
+
 
 @media (min-width: 550px) {
     .header {
@@ -456,5 +469,9 @@ banner-content-primary {
     
     .testimonial-with-img-author {
         margin: 0;
+    }
+    
+    .testimonial {
+        margin-bottom: 0;
     }
 }

@@ -1,13 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header/Header"
-import Menu from "./components/Menu/index"
-import Star from "./components/Star"
 import Badge from "./components/Badge/Badge"
 import Banner from "./components/Banner/index"
+import Button from "./components/Button/Button"
 import Card from "./components/Card/index"
 import TestimonialWithImg from "./components/TestimonialWithImg/index"
 import Testimonial from "./components/Testimonial/index"
+import Menu from "./components/Menu/index"
+
+const sports = ["Tennis", "Pickleball", "Racquetball", "Squash"]
 
 function App() {
   return (
@@ -37,6 +39,7 @@ function App() {
             </div>
           <h3>Syntax</h3>
             <div className="syntax">
+              <p><code>{`import Badge from "./components/Badge/Badge"`}</code></p>
               <p><code>{`<Badge style="pill" variant="success">Success</Badge>`}</code></p>
             </div>
       </section>
@@ -62,11 +65,23 @@ function App() {
           </div>
           <h3>Syntax</h3>
             <div className="syntax">
+              <p><code>{`import Banner from "./components/Banner/index"`}</code></p>
               <p><code>{`<Banner variant="primary">`}</code></p>
               <p><code>{`<Banner.Title>Primary</Banner.Title>`}</code></p>
               <p><code>{`<Banner.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.</Banner.Content>`}</code></p>
               <p><code>{`</Banner>`}</code></p>
             </div>
+      </section>
+      <section>
+        <h2>Button</h2>
+        <div>
+          <Button size="lg" className="green">Log in with Google</Button>
+        </div>
+        <h3>Syntax</h3>
+        <div className="syntax">
+          <p><code>{`import Button from "./components/Button/Button"`}</code></p>
+          <p><code>{`<Button size="lg" className="green">Log in with Google</Button>`}</code></p>
+        </div>
       </section>
       <section>
         <h2>Cards</h2>
@@ -89,6 +104,7 @@ function App() {
           </div>
           <h3>Syntax</h3>
             <div className="syntax">
+              <p><code>{`import Card from "./components/Card/index"`}</code></p>
               <p><code>{`<Card>`}</code></p>
               <p><code>{`<Card.Icon><img className="card-icon" src="./public/cloudUpload.png" /></Card.Icon>`}</code></p>
               <p><code>{`<Card.Title>Easy Deployment</Card.Title>`}</code></p>
@@ -108,6 +124,7 @@ function App() {
         </div>
         <h3>Syntax</h3>
           <div className="syntax">
+            <p><code>{`import TestimonialWithImg from "./components/TestimonialWithImg/index"`}</code></p>
             <p><code>{`<TestimonialWithImg imgSrc="mayAndersons">`}</code></p>
             <p><code>{`<TestimonialWithImg.Quote>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed urna nulla vitae laoreet augue. Amet feugiat est integer dolor auctor adipiscing nunc urna, sit. 
@@ -128,6 +145,7 @@ function App() {
         </div>
         <h3>Syntax</h3>
         <div className="syntax">
+          <p><code>{`import Testimonial from "./components/Testimonial/index"`}</code></p>
           <p><code>{`<Testimonial logo="logo">`}</code></p>
           <p><code>{`<Testimonial.Quote>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed urna nulla vitae laoreet augue. Amet feugiat est integer dolor auctor adipiscing nunc urna, sit. 
@@ -138,18 +156,31 @@ function App() {
       </section>
       <section>
         <h2>Menu</h2>
-        <div></div>
+        <div>
+          <Menu>
+            <Menu.Button>Sports</Menu.Button>
+            <Menu.Dropdown>
+              {sports.map(sport => (
+              <Menu.Item key={sport}>{sport}</Menu.Item>
+              ))}
+            </Menu.Dropdown>
+          </Menu>
+        </div>
         <h3>Syntax</h3>
-        <div className="syntax"></div>
-      </section>
-      <section>
-        <h2>Button</h2>
-        <div></div>
-        <h3>Syntax</h3>
-        <div className="syntax"></div>
+        <div className="syntax">
+          <p><code>{`import Menu from "./components/Menu/index"`}</code></p>
+          <p><code>{`<Menu>`}</code></p>
+          <p><code>{`<Menu.Button>Sports</Menu.Button>`}</code></p>
+          <p><code>{`<Menu.Dropdown> {sports.map(sport => (`}</code></p>
+          <p><code>{`<Menu.Item key={sport}>{sport}</Menu.Item>
+              ))}
+            `}</code></p>
+          <p><code>{`</Menu.Dropdown>`}</code></p>
+          <p><code>{`</Menu>`}</code></p>
+        </div>
       </section>
       <footer>
-        <p>&copy; 2024</p>
+        <p>&copy; 2024 Christopher Wooster</p>
       </footer>
     </>
   )

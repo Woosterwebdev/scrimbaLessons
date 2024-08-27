@@ -1,5 +1,5 @@
 import React from "react"
-import TestimonialWithImg from "./components/TestimonialWithImg/index"
+import TestimonialWithImg from "../components/TestimonialWithImg/index"
 
 export default function TestimonialWithImage() {
     return(

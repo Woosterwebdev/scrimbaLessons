@@ -7,7 +7,7 @@ import Buttons from "./DocsComponents/Buttons"
 import Cards from "./DocsComponents/Cards"
 import TestimonialWithImage from "./DocsComponents/TestimonialWithImage"
 import TestimonialWithLogo from "./DocsComponents/TestimonialWithLogo"
-import Menu from "./DocsComponents/Menu"
+import Menus from "./DocsComponents/Menu"
 import Footer from "./DocsComponents/Footer"
 
 
@@ -22,7 +22,7 @@ function App() {
       <Cards />
       <TestimonialWithImage />
       <TestimonialWithLogo />
-      <Menu />
+      <Menus />
       <Footer />
     </>
   )

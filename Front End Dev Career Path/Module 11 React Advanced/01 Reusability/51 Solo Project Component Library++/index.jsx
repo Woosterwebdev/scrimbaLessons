@@ -1,20 +1,35 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Header from "./components/Header/Header"
-import Badge from "./components/Badge/Badge"
-import Banner from "./components/Banner/index"
-import Button from "./components/Button/Button"
-import Card from "./components/Card/index"
-import TestimonialWithImg from "./components/TestimonialWithImg/index"
-import Testimonial from "./components/Testimonial/index"
-import Menu from "./components/Menu/index"
+import Header from "./DocsComponents/Header"
+import Badges from "./DocsComponents/Badges"
+import Banners from "./DocsComponents/Banners"
+import Buttons from "./DocsComponents/Buttons"
+import Cards from "./DocsComponents/Cards"
+import TestimonialWithImage from "./DocsComponents/TestimonialWithImage"
+import TestimonialWithLogo from "./DocsComponents/TestimonialWithLogo"
+import Menu from "./DocsComponents/Menu"
+import Footer from "./DocsComponents/Footer"
 
-const sports = ["Tennis", "Pickleball", "Racquetball", "Squash"]
+
 
 function App() {
   return (
     <>
       <Header />
+      <Badges />
+      <Banners />
+      <Buttons />
+      <Cards />
+      <TestimonialWithImage />
+      <TestimonialWithLogo />
+      <Menu />
+      <Footer />
+    </>
+  )
+}
+      
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+      /*
       <section>
         <h2>Badges</h2>
           <h3>Square</h3>
@@ -186,39 +201,5 @@ function App() {
   )
 }
 
-ReactDOM.createRoot(document.getElementById('root')).render(<App />);
-
-
-/*
-      <header>
-        <h1>Wooster's React Component Library</h1>
-      </header>
-    <Badge style="square" variant="">Badge</Badge>
-    ***
-    <Banner style="" variant="primary">
-      <Banner.Title>Congratulations!</Banner.Title>
-      <Banner.Content>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid pariatur, ipsum similique veniam.</Banner.Content>
-    </Banner>
-    ***
-    <div className="card-section">
-      <Card>
-        <Card.Icon><img className="card-icon" src="./public/cloudUpload.png" /></Card.Icon>
-        <Card.Title>Easy Deployment</Card.Title>
-        <Card.Content>Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.</Card.Content>
-      </Card>
-    </div>
-    ***
-    <TestimonialWithImg imgSrc="mayAndersons">
-      <TestimonialWithImg.Quote>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed urna nulla vitae laoreet augue. Amet feugiat est integer dolor auctor adipiscing nunc urna, sit. 
-      </TestimonialWithImg.Quote>
-      <TestimonialWithImg.Author author="May Andersons" role="Workcation, CTO" />
-    </TestimonialWithImg>
-    ***
-      <Testimonial logo="logo">
-        <Testimonial.Quote>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed urna nulla vitae laoreet augue. Amet feugiat est integer dolor auctor adipiscing nunc urna, sit. 
-        </Testimonial.Quote>
-        <Testimonial.Author author="May Andersons" role="Workcation, CTO" />
-      </Testimonial>
 */
+

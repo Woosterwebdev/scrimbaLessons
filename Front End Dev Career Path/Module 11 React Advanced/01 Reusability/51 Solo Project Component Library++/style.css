@@ -51,6 +51,24 @@ h3 {
     max-height: 100%;
 }
 
+.badge-examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.buttons-size {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.buttons-variants {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
 footer {
     display: flex;
     justify-content: center;
@@ -65,12 +83,6 @@ footer {
 /*------------------*/
 /* Component styles */
 /*------------------*/
-
-.badge-examples {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
 
 .star {
     height: 30px;

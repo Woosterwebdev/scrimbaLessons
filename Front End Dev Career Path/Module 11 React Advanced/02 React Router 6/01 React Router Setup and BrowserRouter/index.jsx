@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from "react-router-dom" // BrowserRouter is a .Provider
+import { BrowserRouter } from "react-router-dom" // BrowserRouter is a context Provider
 
 function App() {
   return (

@@ -1,8 +1,9 @@
+require('dotenv').config()
 import { initializeApp } from "firebase/app"
 import { getFirestore } from "firebase/firestore/lite"
 
 const firebaseConfig = {
-    apiKey: {env.APIKEY},
+    apiKey: `${process.env.APIKEY}`,
     authDomain: "vanlife-caf62.firebaseapp.com",
     projectId: "vanlife-caf62",
     storageBucket: "vanlife-caf62.appspot.com",

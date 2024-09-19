@@ -15,7 +15,10 @@ Example output: "I'M 😱 ALMOST 😱 OUT 😱 OF 😱 COFFEE!"
 */
 
 function panic(str) {
-    return str.toUpperCase().split(" ").join(" 😱 ")
+    return str
+        .split(" ")
+        .join(" 😱 ")
+        .toUpperCase() + "!"
 }
 
 // Test your function

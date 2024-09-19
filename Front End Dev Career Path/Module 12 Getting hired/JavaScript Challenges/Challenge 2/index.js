@@ -15,7 +15,7 @@ Hint: endsWith and slice
 
 function whisper(str) {
     if (str.endsWith("!")){
-        return "shh... " + str.toLowerCase().split("!").slice(0, 1)
+        return "shh... " + str.slice(0, -1).toLowerCase()
     } else {
     return "shh... " + str.toLowerCase()        
     }

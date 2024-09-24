@@ -19,3 +19,5 @@ What are uncontrolled and controlled components?
 Uncontrolled components are when the form area is handled by the DOM itself and not by state within your component.
 
 Controlled components are when form inputs whose values are controlled by React state.
+
+Convert the class component to a function component.

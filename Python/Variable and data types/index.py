@@ -6,4 +6,5 @@ tool_name="Hammer"
 tool_price=3.99
 tool_quantity=7
 
-print(str(tool_name) + " " + str(tool_price) + " " + str(tool_quantity))
+#print(str(tool_name) + " " + str(tool_price) + " " + str(tool_quantity))
+print(tool_name, tool_price, tool_quantity)
